@@ -1,5 +1,70 @@
 <template>
   <div class="min-h-screen pt-20">
+    <!-- Toast Notification -->
+    <div 
+      v-if="showToast"
+      class="fixed top-4 right-4 z-50 transform transition-all duration-300 ease-in-out"
+      :class="showToast ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'"
+    >
+      <div class="bg-white rounded-lg shadow-lg border-l-4 border-green-500 p-4 max-w-sm">
+        <div class="flex items-center">
+          <div class="flex-shrink-0">
+            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+              <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="ml-3">
+            <p class="text-sm font-medium text-gray-900">Message envoyé !</p>
+            <p class="text-sm text-gray-500">Nous vous contacterons bientôt.</p>
+          </div>
+          <div class="ml-auto pl-3">
+            <button 
+              @click="hideToast"
+              class="inline-flex text-gray-400 hover:text-gray-600 focus:outline-none"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Error Toast -->
+    <div 
+      v-if="showErrorToast"
+      class="fixed top-4 right-4 z-50 transform transition-all duration-300 ease-in-out"
+      :class="showErrorToast ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'"
+    >
+      <div class="bg-white rounded-lg shadow-lg border-l-4 border-red-500 p-4 max-w-sm">
+        <div class="flex items-center">
+          <div class="flex-shrink-0">
+            <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
+              <svg class="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="ml-3">
+            <p class="text-sm font-medium text-gray-900">Erreur d'envoi</p>
+            <p class="text-sm text-gray-500">Veuillez réessayer ou nous contacter par téléphone.</p>
+          </div>
+          <div class="ml-auto pl-3">
+            <button 
+              @click="hideErrorToast"
+              class="inline-flex text-gray-400 hover:text-gray-600 focus:outline-none"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- Page Header -->
     <section class="py-16 bg-transparent text-gray-800">
       <div class="container mx-auto px-4 lg:px-8 text-center">
@@ -205,6 +270,8 @@ import { useRoute } from 'vue-router'
 
 const route = useRoute()
 const isSubmitting = ref(false)
+const showToast = ref(false)
+const showErrorToast = ref(false)
 
 const form = ref({
   firstName: '',
@@ -240,6 +307,29 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
 })
+
+// Toast management
+const hideToast = () => {
+  showToast.value = false
+}
+
+const hideErrorToast = () => {
+  showErrorToast.value = false
+}
+
+const showSuccessToast = () => {
+  showToast.value = true
+  setTimeout(() => {
+    showToast.value = false
+  }, 5000) // Auto-hide after 5 seconds
+}
+
+const showErrorToastMessage = () => {
+  showErrorToast.value = true
+  setTimeout(() => {
+    showErrorToast.value = false
+  }, 8000) // Auto-hide after 8 seconds for errors
+}
 
 const submitForm = async () => {
   isSubmitting.value = true
@@ -296,11 +386,11 @@ const submitForm = async () => {
       message: ''
     }
     
-    alert('✅ Votre demande a été envoyée avec succès ! Nous vous contacterons bientôt.')
+    showSuccessToast()
     
   } catch (error) {
     console.error('Error sending email:', error)
-    alert('❌ Une erreur est survenue lors de l\'envoi. Veuillez réessayer ou nous contacter directement par téléphone.\n\nErreur technique: ' + error.message)
+    showErrorToastMessage()
   } finally {
     isSubmitting.value = false
   }
