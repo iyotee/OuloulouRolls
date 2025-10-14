@@ -68,6 +68,7 @@ Modern, responsive website for **Ouloulou Ice Rolls** - Artisanal Thai ice cream
 | `npm run dev` | Start development server with hot reload |
 | `npm run build` | Build for production |
 | `npm run preview` | Preview production build locally |
+| `npm start` | Serve production build (for deployment) |
 
 ---
 
@@ -130,8 +131,8 @@ This is the **simplest and most reliable** method for static sites like this Vue
    - Repository URL: `https://github.com/iyotee/OuloulouRolls.git`
    - Branch: `main`
    - Build command: `npm install && npm run build`
-   - Start command: `npx serve dist -s`
-   - Port: Leave empty or use `3000` (Infomaniak handles it automatically)
+   - Start command: `npm start`
+   - Port: Leave empty (Infomaniak handles it automatically)
 
 4. **Environment Variables**
    ```
@@ -148,12 +149,13 @@ This is the **simplest and most reliable** method for static sites like this Vue
 | Command | Value |
 |---------|-------|
 | **Build** | `npm install && npm run build` |
-| **Start** | `npx serve dist -s` |
+| **Start** | `npm start` |
 
 > 💡 **Note:** 
-> - `npx` downloads and runs `serve` temporarily (no global install needed)
-> - The `-s` flag enables SPA mode for Vue Router
+> - `npm start` runs `npx serve dist -s` automatically
+> - The `-s` flag enables SPA mode for Vue Router compatibility
 > - Infomaniak automatically assigns the port via environment variable
+> - No global package installation needed!
 
 ---
 
