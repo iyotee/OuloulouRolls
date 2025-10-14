@@ -244,28 +244,61 @@ onUnmounted(() => {
 const submitForm = async () => {
   isSubmitting.value = true
   
-  // Simuler l'envoi du formulaire
-  await new Promise(resolve => setTimeout(resolve, 2000))
-  
-  // Ici vous pouvez intégrer EmailJS ou un autre service
-  console.log('Formulaire envoyé:', form.value)
-  
-  // Reset du formulaire
-  form.value = {
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    eventType: '',
-    customEventType: '',
-    eventDate: '',
-    message: ''
+  try {
+    // Prepare email parameters
+    const eventTypeLabel = form.value.eventType === 'autre' 
+      ? form.value.customEventType 
+      : form.value.eventType
+    
+    const templateParams = {
+      to_email: 'jeremy.noverraz@gmail.com',
+      from_name: `${form.value.firstName} ${form.value.lastName}`,
+      from_email: form.value.email,
+      phone: form.value.phone || 'Non fourni',
+      event_type: eventTypeLabel,
+      event_date: form.value.eventDate || 'Non spécifiée',
+      message: form.value.message,
+      reply_to: form.value.email
+    }
+    
+    // Send email using EmailJS
+    const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        service_id: 'service_ouloulourolls',
+        template_id: 'template_contact',
+        user_id: '2YFk-ZcHZhTtL2nhK',
+        template_params: templateParams
+      })
+    })
+    
+    if (!response.ok) {
+      throw new Error('Email sending failed')
+    }
+    
+    // Reset form on success
+    form.value = {
+      firstName: '',
+      lastName: '',
+      email: '',
+      phone: '',
+      eventType: '',
+      customEventType: '',
+      eventDate: '',
+      message: ''
+    }
+    
+    alert('✅ Votre demande a été envoyée avec succès ! Nous vous contacterons bientôt.')
+    
+  } catch (error) {
+    console.error('Error sending email:', error)
+    alert('❌ Une erreur est survenue lors de l\'envoi. Veuillez réessayer ou nous contacter directement par téléphone.')
+  } finally {
+    isSubmitting.value = false
   }
-  
-  isSubmitting.value = false
-  
-  // Afficher un message de succès
-  alert('Votre demande a été envoyée avec succès ! Nous vous contacterons bientôt.')
 }
 </script>
 
