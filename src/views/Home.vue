@@ -6,7 +6,7 @@
         <img src="/logo.svg" alt="Ouloulou Ice Rolls" class="mx-auto h-48 lg:h-64 mb-12 drop-shadow-2xl animate-float">
         
         <h1 class="text-5xl lg:text-7xl font-meddon mb-12 drop-shadow-lg hero-title-mobile">
-          Glaces Roulées Artisanales
+          Glaces Roulées
         </h1>
         
         
