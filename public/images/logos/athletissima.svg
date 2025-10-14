@@ -1,0 +1,23 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Red square background -->
+  <rect x="0" y="0" width="200" height="200" fill="#DC2626"/>
+  
+  <!-- Clip path to crop the text -->
+  <defs>
+    <clipPath id="textClip">
+      <rect x="0" y="0" width="200" height="200"/>
+    </clipPath>
+  </defs>
+  
+  <!-- Text with clipping applied -->
+  <text x="100" y="110" 
+        font-family="Arial, sans-serif" 
+        font-size="20" 
+        font-weight="bold" 
+        text-anchor="middle" 
+        dominant-baseline="middle" 
+        fill="white"
+        clip-path="url(#textClip)">
+    ATHLETISSIMA
+  </text>
+</svg>

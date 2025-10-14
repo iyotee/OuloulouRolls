@@ -1,0 +1,6 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="200" fill="#6A5ACD"/>
+  <text x="100" y="90" font-family="Roboto, sans-serif" font-size="16" font-weight="900" text-anchor="middle" fill="white">FESTIVAL</text>
+  <text x="100" y="110" font-family="Roboto, sans-serif" font-size="16" font-weight="900" text-anchor="middle" fill="white">DE LA</text>
+  <text x="100" y="130" font-family="Roboto, sans-serif" font-size="16" font-weight="900" text-anchor="middle" fill="white">CITÉ</text>
+</svg>
