@@ -18,7 +18,7 @@ L'erreur **400** indique que la configuration EmailJS n'est pas complète. Voici
 ### 2. Créer le Template EmailJS
 
 1. **Email Templates** → **Create New Template**
-2. **Template ID** : `template_contact` (EXACTEMENT cet ID)
+2. **Template ID** : `template_d5rsd8f` (EXACTEMENT cet ID)
 3. **Subject** : `[Ouloulou] Nouvelle demande - {{event_type}}`
 4. **Content** : Copier le HTML ci-dessous
 
@@ -111,7 +111,7 @@ Assurez-vous que ces variables sont dans le template :
 ### Vérifications à faire :
 
 1. **Service ID** : `service_ouloulourolls` (exactement)
-2. **Template ID** : `template_contact` (exactement)
+2. **Template ID** : `template_d5rsd8f` (exactement)
 3. **User ID** : `2YFk-ZcHZhTtL2nhK` (correct)
 4. **Service connecté** : Vérifier que le service email est bien connecté
 5. **Template publié** : Le template doit être publié (pas en brouillon)

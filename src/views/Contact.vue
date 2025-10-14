@@ -268,7 +268,7 @@ const submitForm = async () => {
       },
       body: JSON.stringify({
         service_id: 'service_ouloulourolls',
-        template_id: 'template_contact',
+        template_id: 'template_d5rsd8f',
         user_id: '2YFk-ZcHZhTtL2nhK',
         template_params: templateParams
       })

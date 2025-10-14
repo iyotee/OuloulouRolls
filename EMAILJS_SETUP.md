@@ -5,7 +5,7 @@
 The contact form is configured to send emails using EmailJS with the following credentials:
 
 - **Service ID**: `service_ouloulourolls`
-- **Template ID**: `template_contact`
+- **Template ID**: `template_d5rsd8f`
 - **Public Key**: `2YFk-ZcHZhTtL2nhK`
 - **Current Recipient**: `jeremy.noverraz@gmail.com` (for testing)
 
@@ -29,7 +29,7 @@ The contact form is configured to send emails using EmailJS with the following c
 
 1. Go to **Email Templates** in the dashboard
 2. Click **Create New Template**
-3. Use the template ID: `template_contact`
+3. Use the template ID: `template_d5rsd8f`
 
 #### Template HTML Content:
 
