@@ -251,7 +251,6 @@ const submitForm = async () => {
       : form.value.eventType
     
     const templateParams = {
-      to_email: 'jeremy.noverraz@gmail.com',
       from_name: `${form.value.firstName} ${form.value.lastName}`,
       from_email: form.value.email,
       phone: form.value.phone || 'Non fourni',
@@ -261,7 +260,7 @@ const submitForm = async () => {
       reply_to: form.value.email
     }
     
-    // Send email using EmailJS
+    // Send email using EmailJS with improved error handling
     const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
       method: 'POST',
       headers: {
@@ -275,8 +274,14 @@ const submitForm = async () => {
       })
     })
     
+    // Log response for debugging
+    console.log('EmailJS Response Status:', response.status)
+    console.log('EmailJS Response:', await response.text())
+    
     if (!response.ok) {
-      throw new Error('Email sending failed')
+      const errorText = await response.text()
+      console.error('EmailJS Error Response:', errorText)
+      throw new Error(`Email sending failed: ${response.status} - ${errorText}`)
     }
     
     // Reset form on success
@@ -295,7 +300,7 @@ const submitForm = async () => {
     
   } catch (error) {
     console.error('Error sending email:', error)
-    alert('❌ Une erreur est survenue lors de l\'envoi. Veuillez réessayer ou nous contacter directement par téléphone.')
+    alert('❌ Une erreur est survenue lors de l\'envoi. Veuillez réessayer ou nous contacter directement par téléphone.\n\nErreur technique: ' + error.message)
   } finally {
     isSubmitting.value = false
   }
