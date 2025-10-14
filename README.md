@@ -129,14 +129,13 @@ This is the **simplest and most reliable** method for static sites like this Vue
 3. **Configure Git Repository**
    - Repository URL: `https://github.com/iyotee/OuloulouRolls.git`
    - Branch: `main`
-   - Build command: `npm install && npm run build && npm install -g serve`
-   - Start command: `serve dist -s -l 3000`
-   - Port: `3000`
+   - Build command: `npm install && npm run build`
+   - Start command: `npx serve dist -s`
+   - Port: Leave empty or use `3000` (Infomaniak handles it automatically)
 
 4. **Environment Variables**
    ```
    NODE_ENV=production
-   PORT=3000
    ```
 
 5. **Deploy**
@@ -148,11 +147,13 @@ This is the **simplest and most reliable** method for static sites like this Vue
 
 | Command | Value |
 |---------|-------|
-| **Build** | `npm install && npm run build && npm install -g serve` |
-| **Start** | `serve dist -s -l 3000` |
-| **Port** | `3000` |
+| **Build** | `npm install && npm run build` |
+| **Start** | `npx serve dist -s` |
 
-> 💡 **Note:** The `-s` flag enables SPA (Single Page Application) mode, redirecting all routes to `index.html` for Vue Router compatibility.
+> 💡 **Note:** 
+> - `npx` downloads and runs `serve` temporarily (no global install needed)
+> - The `-s` flag enables SPA mode for Vue Router
+> - Infomaniak automatically assigns the port via environment variable
 
 ---
 
