@@ -73,7 +73,49 @@ Modern, responsive website for **Ouloulou Ice Rolls** - Artisanal Thai ice cream
 
 ## 🌐 Infomaniak Deployment
 
-### Method 1: Git Deployment (Recommended)
+### Method 1: Web Hosting Classic (⭐ Recommended)
+
+This is the **simplest and most reliable** method for static sites like this Vue.js application.
+
+1. **Build the application locally**
+   ```bash
+   npm install
+   npm run build
+   ```
+   This creates an optimized production build in the `dist/` folder.
+
+2. **Upload via FTP/SFTP**
+   - Connect to your Infomaniak hosting via FTP client (FileZilla, WinSCP, etc.)
+   - Upload **all contents** of the `dist/` folder to your web root (usually `web/` or `public_html/`)
+   - Your site will be immediately accessible at your domain
+
+3. **Configure .htaccess for Vue Router** (Create this file in web root)
+   ```apache
+   <IfModule mod_rewrite.c>
+     RewriteEngine On
+     RewriteBase /
+     RewriteRule ^index\.html$ - [L]
+     RewriteCond %{REQUEST_FILENAME} !-f
+     RewriteCond %{REQUEST_FILENAME} !-d
+     RewriteRule . /index.html [L]
+   </IfModule>
+   ```
+
+4. **Enable HTTPS**
+   - In Infomaniak panel, enable automatic SSL certificate
+   - Force HTTPS redirect in panel settings
+
+**✅ Advantages:**
+- No Node.js server needed
+- Better performance (served by Apache/Nginx)
+- Simpler maintenance
+- Lower resource usage
+
+---
+
+### Method 2: Node.js Hosting
+
+⚠️ **Only use this if you specifically need Node.js features or have a Node.js hosting plan.**
 
 1. **Login to Infomaniak Panel**
    - Go to your Infomaniak hosting panel
@@ -87,11 +129,11 @@ Modern, responsive website for **Ouloulou Ice Rolls** - Artisanal Thai ice cream
 3. **Configure Git Repository**
    - Repository URL: `https://github.com/iyotee/OuloulouRolls.git`
    - Branch: `main`
-   - Build command: `npm install && npm run build`
-   - Start command: `npx vite preview --host 0.0.0.0 --port 3000`
+   - Build command: `npm install && npm run build && npm install -g serve`
+   - Start command: `serve dist -s -l 3000`
    - Port: `3000`
 
-4. **Environment Variables** (Optional)
+4. **Environment Variables**
    ```
    NODE_ENV=production
    PORT=3000
@@ -102,42 +144,29 @@ Modern, responsive website for **Ouloulou Ice Rolls** - Artisanal Thai ice cream
    - Wait for build completion
    - Your site will be live at your configured domain
 
-### Method 2: Manual Deployment via FTP
+**Build & Start Commands Summary:**
 
-1. **Build locally**
-   ```bash
-   npm install
-   npm run build
-   ```
+| Command | Value |
+|---------|-------|
+| **Build** | `npm install && npm run build && npm install -g serve` |
+| **Start** | `serve dist -s -l 3000` |
+| **Port** | `3000` |
 
-2. **Upload files via FTP**
-   - Upload the entire `dist/` folder contents to your web root
-   - Configure your domain to point to these files
+> 💡 **Note:** The `-s` flag enables SPA (Single Page Application) mode, redirecting all routes to `index.html` for Vue Router compatibility.
 
-### Build & Start Commands
-
-For Infomaniak Node.js hosting configuration:
-
-**Build Command:**
-```bash
-npm install && npm run build
-```
-
-**Start Command:**
-```bash
-npx vite preview --host 0.0.0.0 --port 3000
-```
+---
 
 ### Domain Configuration
 
-1. **In Infomaniak DNS**
-   - Type: `CNAME`
-   - Name: `www`
-   - Value: `your-app.infomaniak.com`
+1. **In Infomaniak DNS Panel**
+   - Add or edit DNS record:
+     - **Type**: `A` (for main domain) or `CNAME` (for subdomain)
+     - **Name**: `@` (for root) or `www` (for subdomain)
+     - **Value**: Your server IP or hostname
 
 2. **SSL Certificate**
-   - Enable automatic SSL in Infomaniak panel
-   - Force HTTPS redirect
+   - Enable automatic Let's Encrypt SSL in Infomaniak panel
+   - Force HTTPS redirect for security
 
 ---
 
