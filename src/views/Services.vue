@@ -14,7 +14,7 @@
     <section class="py-20">
       <div class="container mx-auto px-4 lg:px-8">
         <!-- Événements Privés -->
-        <div class="mb-20">
+        <div id="evenements-prives" class="mb-20 scroll-mt-24">
           <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
             <div class="space-y-6 text-gray-700 text-lg">
               <h2 class="text-3xl lg:text-4xl font-windsong text-center" style="color: #62B1CE;">Événements Privés</h2>
@@ -58,7 +58,7 @@
         </div>
 
         <!-- Anniversaires -->
-        <div class="mb-20">
+        <div id="anniversaires" class="mb-20 scroll-mt-24">
           <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
             <div class="rounded-2xl overflow-hidden shadow-2xl max-w-md mx-auto">
               <img src="/images/anniversaire.png" alt="Anniversaire" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
@@ -102,7 +102,7 @@
         </div>
 
         <!-- Mariages -->
-        <div class="mb-20">
+        <div id="mariages" class="mb-20 scroll-mt-24">
           <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
             <div class="rounded-2xl overflow-hidden shadow-2xl max-w-md mx-auto order-2 lg:order-1">
               <img src="/images/mariage.png" alt="Mariage élégant" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
@@ -146,7 +146,7 @@
         </div>
 
         <!-- Festivals -->
-        <div class="mb-20">
+        <div id="festivals" class="mb-20 scroll-mt-24">
           <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
             <div class="space-y-6 text-gray-700 text-lg">
               <h2 class="text-3xl lg:text-4xl font-windsong text-center" style="color: #62B1CE;">Festivals</h2>
@@ -190,7 +190,7 @@
         </div>
 
         <!-- Entreprises -->
-        <div class="mb-20">
+        <div id="entreprises" class="mb-20 scroll-mt-24">
           <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
             <div class="rounded-2xl overflow-hidden shadow-2xl max-w-md mx-auto order-2 lg:order-1">
               <img src="/images/entreprise.png" alt="Événement corporatif" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">

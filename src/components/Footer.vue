@@ -85,11 +85,15 @@
         <!-- Services -->
         <div>
           <h3 class="text-lg font-heading font-semibold mb-4 text-gray-800">Services</h3>
-          <ul class="space-y-2 text-gray-600">
-            <li>Événements privés</li>
-            <li>Festivals</li>
-            <li>Entreprises</li>
-            <li>Mariages</li>
+          <ul class="space-y-2">
+            <li v-for="service in services" :key="service.path">
+              <router-link 
+                :to="service.path"
+                class="text-gray-600 hover:text-accent-indigo transition-colors duration-200"
+              >
+                {{ service.name }}
+              </router-link>
+            </li>
           </ul>
         </div>
 
@@ -141,6 +145,14 @@ const navLinks = [
   { name: 'Galerie', path: '/galerie' },
   { name: 'Nos clients', path: '/confiance' },
   { name: 'Contact', path: '/contact' }
+]
+
+const services = [
+  { name: 'Événements privés', path: '/services#evenements-prives' },
+  { name: 'Anniversaires', path: '/services#anniversaires' },
+  { name: 'Festivals', path: '/services#festivals' },
+  { name: 'Entreprises', path: '/services#entreprises' },
+  { name: 'Mariages', path: '/services#mariages' }
 ]
 
 const socials = [
