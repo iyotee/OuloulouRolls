@@ -28,9 +28,9 @@
         <div class="text-center">
           <h3 class="text-lg font-heading font-semibold mb-4 text-gray-800">Contact</h3>
           <div class="space-y-3 text-gray-600">
-            <a href="mailto:oulouloufood@gmail.com" class="flex items-center justify-center gap-2 hover:text-accent-indigo transition-colors">
+            <a href="mailto:info@ouloulouicerolls.ch" class="flex items-center justify-center gap-2 hover:text-accent-indigo transition-colors">
               <i class="fas fa-envelope"></i>
-              oulouloufood@gmail.com
+              info@ouloulouicerolls.ch
             </a>
             <a href="tel:+41764166916" class="flex items-center justify-center gap-2 hover:text-accent-indigo transition-colors">
               <i class="fas fa-phone"></i>
@@ -101,9 +101,9 @@
         <div>
           <h3 class="text-lg font-heading font-semibold mb-4 text-gray-800">Contact</h3>
           <div class="space-y-3 text-gray-600">
-            <a href="mailto:oulouloufood@gmail.com" class="flex items-center gap-2 hover:text-accent-indigo transition-colors">
+            <a href="mailto:info@ouloulouicerolls.ch" class="flex items-center gap-2 hover:text-accent-indigo transition-colors">
               <i class="fas fa-envelope"></i>
-              oulouloufood@gmail.com
+              info@ouloulouicerolls.ch
             </a>
             <a href="tel:+41764166916" class="flex items-center gap-2 hover:text-accent-indigo transition-colors">
               <i class="fas fa-phone"></i>

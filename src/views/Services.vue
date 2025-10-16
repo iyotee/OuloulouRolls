@@ -17,7 +17,7 @@
         <div id="evenements-prives" class="mb-20 scroll-mt-24">
           <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
             <div class="space-y-6 text-gray-700 text-lg">
-              <h2 class="text-3xl lg:text-4xl font-windsong text-center" style="color: #62B1CE;">Événements Privés</h2>
+              <h2 class="text-3xl lg:text-4xl font-windsong text-center text-black">Événements Privés</h2>
               <p>
                 Que ce soit pour un <strong>anniversaire</strong>, une <strong>fête de famille</strong>, 
                 ou toute autre célébration privée, nos glaces roulées artisanales apportent une touche 
@@ -28,23 +28,23 @@
                 un spectacle culinaire qui émerveillera vos invités. Chaque glace est préparée 
                 devant vos yeux avec des ingrédients frais et des saveurs authentiques.
               </p>
-              <div class="bg-gradient-to-r from-pink-50 to-purple-50 p-6 rounded-2xl">
-                <h3 class="text-xl font-heading mb-3" style="color: #62B1CE;">Inclus dans nos services :</h3>
-                <ul class="space-y-2 text-gray-600">
+              <div class="bg-gradient-to-r from-gray-100 to-gray-200 p-6 rounded-2xl">
+                <h3 class="text-xl font-heading mb-3 text-black">Inclus dans nos services :</h3>
+                <ul class="space-y-2 text-gray-800">
                   <li class="flex items-center gap-2">
-                    <i class="fas fa-check-circle" style="color: #62B1CE;"></i>
+                    <i class="fas fa-check-circle text-black"></i>
                     Préparation en direct devant vos invités
                   </li>
                   <li class="flex items-center gap-2">
-                    <i class="fas fa-check-circle" style="color: #62B1CE;"></i>
+                    <i class="fas fa-check-circle text-black"></i>
                     Matériel et ingrédients fournis
                   </li>
                   <li class="flex items-center gap-2">
-                    <i class="fas fa-check-circle" style="color: #62B1CE;"></i>
+                    <i class="fas fa-check-circle text-black"></i>
                     Plusieurs parfums au choix
                   </li>
                   <li class="flex items-center gap-2">
-                    <i class="fas fa-check-circle" style="color: #62B1CE;"></i>
+                    <i class="fas fa-check-circle text-black"></i>
                     Personnel expérimenté et professionnel
                   </li>
                 </ul>
@@ -65,7 +65,7 @@
             </div>
             
             <div class="space-y-6 text-gray-700 text-lg">
-              <h2 class="text-3xl lg:text-4xl font-windsong text-center" style="color: #62B1CE;">Anniversaires</h2>
+              <h2 class="text-3xl lg:text-4xl font-windsong text-center text-black">Anniversaires</h2>
               <p>
                 Pour célébrer un <strong>anniversaire</strong> en beauté, nos glaces roulées artisanales 
                 apportent une touche festive et originale à votre fête. Un dessert spectaculaire qui 
@@ -76,23 +76,23 @@
                 Nos glaces roulées deviennent le clou du spectacle, créant des souvenirs inoubliables 
                 autour d'un moment de partage gourmand.
               </p>
-              <div class="bg-gradient-to-r from-pink-50 to-purple-50 p-6 rounded-2xl">
-                <h3 class="text-xl font-heading mb-3" style="color: #62B1CE;">Pour vos anniversaires :</h3>
-                <ul class="space-y-2 text-gray-600">
+              <div class="bg-gradient-to-r from-gray-100 to-gray-200 p-6 rounded-2xl">
+                <h3 class="text-xl font-heading mb-3 text-black">Pour vos anniversaires :</h3>
+                <ul class="space-y-2 text-gray-800">
                   <li class="flex items-center gap-2">
-                    <i class="fas fa-birthday-cake" style="color: #ff6b6b;"></i>
+                    <i class="fas fa-birthday-cake text-black"></i>
                     Dessert festif et original
                   </li>
                   <li class="flex items-center gap-2">
-                    <i class="fas fa-birthday-cake" style="color: #ff6b6b;"></i>
+                    <i class="fas fa-birthday-cake text-black"></i>
                     Animation interactive pour tous les âges
                   </li>
                   <li class="flex items-center gap-2">
-                    <i class="fas fa-birthday-cake" style="color: #ff6b6b;"></i>
+                    <i class="fas fa-birthday-cake text-black"></i>
                     Parfums variés pour plaire à tous
                   </li>
                   <li class="flex items-center gap-2">
-                    <i class="fas fa-birthday-cake" style="color: #ff6b6b;"></i>
+                    <i class="fas fa-birthday-cake text-black"></i>
                     Ambiance conviviale garantie
                   </li>
                 </ul>
@@ -109,7 +109,7 @@
             </div>
             
             <div class="space-y-6 text-gray-700 text-lg order-1 lg:order-2">
-              <h2 class="text-3xl lg:text-4xl font-windsong text-center" style="color: #62B1CE;">Mariages</h2>
+              <h2 class="text-3xl lg:text-4xl font-windsong text-center text-black">Mariages</h2>
               <p>
                 Pour votre <strong>grand jour</strong>, offrez à vos invités une expérience gustative 
                 inoubliable avec nos glaces roulées artisanales. Un dessert unique qui s'harmonise 
@@ -120,23 +120,23 @@
                 Que ce soit pour le cocktail, la réception ou comme dessert original, nos glaces roulées 
                 apporteront une note d'exotisme raffiné à votre mariage.
               </p>
-              <div class="bg-gradient-to-r from-pink-50 to-purple-50 p-6 rounded-2xl">
-                <h3 class="text-xl font-heading mb-3" style="color: #62B1CE;">Nos prestations mariage :</h3>
-                <ul class="space-y-2 text-gray-600">
+              <div class="bg-gradient-to-r from-gray-100 to-gray-200 p-6 rounded-2xl">
+                <h3 class="text-xl font-heading mb-3 text-black">Nos prestations mariage :</h3>
+                <ul class="space-y-2 text-gray-800">
                   <li class="flex items-center gap-2">
-                    <i class="fas fa-heart" style="color: #e91e63;"></i>
+                    <i class="fas fa-heart text-black"></i>
                     Cocktail d'accueil avec glaces rafraîchissantes
                   </li>
                   <li class="flex items-center gap-2">
-                    <i class="fas fa-heart" style="color: #e91e63;"></i>
+                    <i class="fas fa-heart text-black"></i>
                     Dessert original pour la réception
                   </li>
                   <li class="flex items-center gap-2">
-                    <i class="fas fa-heart" style="color: #e91e63;"></i>
+                    <i class="fas fa-heart text-black"></i>
                     Personnalisation selon votre thème
                   </li>
                   <li class="flex items-center gap-2">
-                    <i class="fas fa-heart" style="color: #e91e63;"></i>
+                    <i class="fas fa-heart text-black"></i>
                     Service discret et professionnel
                   </li>
                 </ul>
@@ -149,7 +149,7 @@
         <div id="festivals" class="mb-20 scroll-mt-24">
           <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
             <div class="space-y-6 text-gray-700 text-lg">
-              <h2 class="text-3xl lg:text-4xl font-windsong text-center" style="color: #62B1CE;">Festivals</h2>
+              <h2 class="text-3xl lg:text-4xl font-windsong text-center text-black">Festivals</h2>
               <p>
                 Nos glaces roulées artisanales sont parfaites pour animer vos <strong>festivals</strong> 
                 et événements culturels. Un stand attractif qui attire les festivaliers et leur 
@@ -160,23 +160,23 @@
                 parfaite pour votre événement. Notre stand devient un véritable point de rencontre 
                 où les festivaliers partagent des moments conviviaux autour de nos créations.
               </p>
-              <div class="bg-gradient-to-r from-pink-50 to-purple-50 p-6 rounded-2xl">
-                <h3 class="text-xl font-heading mb-3" style="color: #62B1CE;">Pour vos festivals :</h3>
-                <ul class="space-y-2 text-gray-600">
+              <div class="bg-gradient-to-r from-gray-100 to-gray-200 p-6 rounded-2xl">
+                <h3 class="text-xl font-heading mb-3 text-black">Pour vos festivals :</h3>
+                <ul class="space-y-2 text-gray-800">
                   <li class="flex items-center gap-2">
-                    <i class="fas fa-music" style="color: #9c27b0;"></i>
+                    <i class="fas fa-music text-black"></i>
                     Stand attractif et bien équipé
                   </li>
                   <li class="flex items-center gap-2">
-                    <i class="fas fa-music" style="color: #9c27b0;"></i>
+                    <i class="fas fa-music text-black"></i>
                     Service rapide et efficace
                   </li>
                   <li class="flex items-center gap-2">
-                    <i class="fas fa-music" style="color: #9c27b0;"></i>
+                    <i class="fas fa-music text-black"></i>
                     Animation et spectacle culinaire
                   </li>
                   <li class="flex items-center gap-2">
-                    <i class="fas fa-music" style="color: #9c27b0;"></i>
+                    <i class="fas fa-music text-black"></i>
                     Gestion autonome complète
                   </li>
                 </ul>
@@ -197,7 +197,7 @@
             </div>
             
             <div class="space-y-6 text-gray-700 text-lg order-1 lg:order-2">
-              <h2 class="text-3xl lg:text-4xl font-windsong text-center" style="color: #62B1CE;">Entreprises</h2>
+              <h2 class="text-3xl lg:text-4xl font-windsong text-center text-black">Entreprises</h2>
               <p>
                 Pour vos <strong>événements d'entreprise</strong>, team building, lancements de produits 
                 ou réceptions corporatives, nos glaces roulées artisanales créent une expérience 
@@ -208,23 +208,23 @@
                 Nous respectons vos contraintes horaires, votre dress code et nous nous intégrons 
                 harmonieusement à votre événement pour une prestation de qualité.
               </p>
-              <div class="bg-gradient-to-r from-pink-50 to-purple-50 p-6 rounded-2xl">
-                <h3 class="text-xl font-heading mb-3" style="color: #62B1CE;">Événements d'entreprise :</h3>
-                <ul class="space-y-2 text-gray-600">
+              <div class="bg-gradient-to-r from-gray-100 to-gray-200 p-6 rounded-2xl">
+                <h3 class="text-xl font-heading mb-3 text-black">Événements d'entreprise :</h3>
+                <ul class="space-y-2 text-gray-800">
                   <li class="flex items-center gap-2">
-                    <i class="fas fa-briefcase" style="color: #2196f3;"></i>
+                    <i class="fas fa-briefcase text-black"></i>
                     Team building et événements internes
                   </li>
                   <li class="flex items-center gap-2">
-                    <i class="fas fa-briefcase" style="color: #2196f3;"></i>
+                    <i class="fas fa-briefcase text-black"></i>
                     Lancements de produits
                   </li>
                   <li class="flex items-center gap-2">
-                    <i class="fas fa-briefcase" style="color: #2196f3;"></i>
+                    <i class="fas fa-briefcase text-black"></i>
                     Réceptions clients et partenaires
                   </li>
                   <li class="flex items-center gap-2">
-                    <i class="fas fa-briefcase" style="color: #2196f3;"></i>
+                    <i class="fas fa-briefcase text-black"></i>
                     Service corporate adapté
                   </li>
                 </ul>

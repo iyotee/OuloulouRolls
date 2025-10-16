@@ -191,42 +191,42 @@
 
           <!-- Contact Info -->
           <div class="space-y-8">
-            <div class="rounded-2xl p-8 text-white" style="background: linear-gradient(135deg, #5AAECC 0%, #62B1CE 100%);">
-              <h2 class="text-3xl font-heading mb-6">Nos Coordonnées</h2>
-              <p class="text-white/90 mb-8">N'hésitez pas à nous contacter directement.</p>
+            <div class="bg-gradient-to-r from-gray-100 to-gray-200 rounded-2xl p-8 text-gray-800">
+              <h2 class="text-3xl font-heading mb-6 text-black">Nos Coordonnées</h2>
+              <p class="text-gray-700 mb-8">N'hésitez pas à nous contacter directement.</p>
               
               <div class="space-y-6">
                 <div class="flex items-center gap-4">
-                  <a href="mailto:oulouloufood@gmail.com" class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-all duration-200 hover:scale-110">
-                    <i class="fas fa-envelope text-xl"></i>
+                  <a href="mailto:info@ouloulouicerolls.ch" class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center hover:bg-gray-400 transition-all duration-200 hover:scale-110">
+                    <i class="fas fa-envelope text-xl text-black"></i>
                   </a>
                   <div>
-                    <p class="font-semibold">Email</p>
-                    <a href="mailto:oulouloufood@gmail.com" class="text-white/90 hover:text-white transition-colors">
-                      oulouloufood@gmail.com
+                    <p class="font-semibold text-black">Email</p>
+                    <a href="mailto:info@ouloulouicerolls.ch" class="text-gray-700 hover:text-black transition-colors">
+                      info@ouloulouicerolls.ch
                     </a>
                   </div>
                 </div>
                 
                 <div class="flex items-center gap-4">
-                  <a href="tel:+41764166916" class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-all duration-200 hover:scale-110">
-                    <i class="fas fa-phone text-xl"></i>
+                  <a href="tel:+41764166916" class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center hover:bg-gray-400 transition-all duration-200 hover:scale-110">
+                    <i class="fas fa-phone text-xl text-black"></i>
                   </a>
                   <div>
-                    <p class="font-semibold">Téléphone</p>
-                    <a href="tel:+41764166916" class="text-white/90 hover:text-white transition-colors">
+                    <p class="font-semibold text-black">Téléphone</p>
+                    <a href="tel:+41764166916" class="text-gray-700 hover:text-black transition-colors">
                       +41 76 416 69 16
                     </a>
                   </div>
                 </div>
                 
                 <div class="flex items-center gap-4">
-                  <a href="https://wa.me/41764166916" target="_blank" class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-all duration-200 hover:scale-110">
-                    <i class="fab fa-whatsapp text-xl"></i>
+                  <a href="https://wa.me/41764166916" target="_blank" class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center hover:bg-gray-400 transition-all duration-200 hover:scale-110">
+                    <i class="fab fa-whatsapp text-xl text-black"></i>
                   </a>
                   <div>
-                    <p class="font-semibold">WhatsApp</p>
-                    <a href="https://wa.me/41764166916" target="_blank" class="text-white/90 hover:text-white transition-colors">
+                    <p class="font-semibold text-black">WhatsApp</p>
+                    <a href="https://wa.me/41764166916" target="_blank" class="text-gray-700 hover:text-black transition-colors">
                       +41 76 416 69 16
                     </a>
                   </div>
@@ -241,10 +241,9 @@
               <a 
                 href="https://maps.app.goo.gl/yTukj9yrVJeBdGRi6" 
                 target="_blank"
-                class="inline-flex items-center gap-3 px-6 py-3 text-white rounded-full font-semibold hover:shadow-lg transition-all duration-200"
-                style="background: linear-gradient(135deg, #5AAECC 0%, #62B1CE 100%);"
+                class="inline-flex items-center gap-3 px-6 py-3 text-black bg-gray-200 rounded-full font-semibold hover:bg-gray-300 hover:shadow-lg transition-all duration-200"
               >
-                <i class="fab fa-google text-xl"></i>
+                <i class="fab fa-google text-xl text-black"></i>
                 Voir nos avis Google
               </a>
             </div>
@@ -357,9 +356,9 @@ const submitForm = async () => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        service_id: 'service_ouloulourolls',
-        template_id: 'template_d5rsd8f',
-        user_id: '2YFk-ZcHZhTtL2nhK',
+        service_id: 'service_93ma3jc',
+        template_id: 'template_zppkiq5',
+        user_id: 'zJLPOuaTD06vBpa6b',
         template_params: templateParams
       })
     })

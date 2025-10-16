@@ -23,7 +23,7 @@
               class="text-center group hover:-translate-y-2 transition-all duration-300"
             >
               <div class="w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 mx-auto mb-4 rounded-xl shadow-lg group-hover:shadow-xl overflow-hidden">
-                <img v-if="company.icon.startsWith('/')" :src="company.icon" :alt="company.name" class="w-full h-full object-cover">
+                <img v-if="company.icon.startsWith('/')" :src="company.icon" :alt="company.name" class="w-full h-full object-contain p-2 bg-white">
                 <i v-else :class="company.icon" class="text-2xl sm:text-3xl lg:text-4xl text-accent-indigo"></i>
               </div>
               <h3 class="font-semibold text-gray-800 mb-2 text-sm sm:text-base">{{ company.name }}</h3>
@@ -42,7 +42,7 @@
               class="text-center group hover:-translate-y-2 transition-all duration-300"
             >
               <div class="w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 mx-auto mb-4 rounded-xl shadow-lg group-hover:shadow-xl overflow-hidden">
-                <img v-if="festival.icon.startsWith('/')" :src="festival.icon" :alt="festival.name" class="w-full h-full object-cover">
+                <img v-if="festival.icon.startsWith('/')" :src="festival.icon" :alt="festival.name" class="w-full h-full object-contain p-2 bg-white">
                 <i v-else :class="festival.icon" class="text-2xl sm:text-3xl lg:text-4xl text-purple-600"></i>
               </div>
               <h3 class="font-semibold text-gray-800 mb-2 text-sm sm:text-base">{{ festival.name }}</h3>
@@ -61,7 +61,7 @@
               class="text-center group hover:-translate-y-2 transition-all duration-300"
             >
               <div class="w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 mx-auto mb-4 rounded-xl shadow-lg group-hover:shadow-xl overflow-hidden">
-                <img v-if="sport.icon.startsWith('/')" :src="sport.icon" :alt="sport.name" class="w-full h-full object-cover">
+                <img v-if="sport.icon.startsWith('/')" :src="sport.icon" :alt="sport.name" class="w-full h-full object-contain p-2 bg-white">
                 <i v-else :class="sport.icon" class="text-2xl sm:text-3xl lg:text-4xl text-blue-600"></i>
               </div>
               <h3 class="font-semibold text-gray-800 mb-2 text-sm sm:text-base">{{ sport.name }}</h3>
@@ -130,40 +130,40 @@ onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
 })
 const entreprises = [
-  { name: 'UBS', icon: '/images/logos/ubs.svg', description: 'Événements bancaires' },
-  { name: 'Migros Vaud', icon: '/images/logos/migros-vaud.svg', description: 'Événements corporatifs' },
-  { name: 'Rolex', icon: '/images/logos/rolex.svg', description: 'Événements de luxe' },
-  { name: 'Swisscom', icon: '/images/logos/swisscom.svg', description: 'Événements tech' },
-  { name: 'Nestlé', icon: '/images/logos/nestle.svg', description: 'Événements alimentaires' },
-  { name: 'Novartis', icon: '/images/logos/novartis.svg', description: 'Événements pharma' },
-  { name: 'Graine de Foot', icon: '/images/logos/graine-de-foot.svg', description: 'Événements sportifs' },
-  { name: 'Orllati', icon: '/images/logos/orllati.svg', description: 'Événements corporatifs' },
-  { name: 'Enzo Net', icon: '/images/logos/enzo-net.svg', description: 'Événements tech' },
-  { name: 'Ville de Renens', icon: '/images/logos/ville-renens.svg', description: 'Événements municipaux' },
-  { name: 'Le Châtelard', icon: '/images/logos/le-chatelard.svg', description: 'Événements éducatifs' },
-  { name: 'SCHR', icon: '/images/logos/schr.svg', description: 'Événements corporatifs' },
-  { name: 'Polyval', icon: '/images/logos/polyval.svg', description: 'Événements corporatifs' }
+  { name: 'UBS', icon: '/images/logos/ubs.png', description: 'Événements bancaires' },
+  { name: 'Migros Vaud', icon: '/images/logos/migros-logo.png', description: 'Événements corporatifs' },
+  { name: 'Rolex', icon: '/images/logos/Rolex.png', description: 'Événements de luxe' },
+  { name: 'Swisscom', icon: '/images/logos/swisscomLogo.png', description: 'Événements tech' },
+  { name: 'Nestlé', icon: '/images/logos/Nestle.png', description: 'Événements alimentaires' },
+  { name: 'Novartis', icon: '/images/logos/novartis.png', description: 'Événements pharma' },
+  { name: 'Graine de Foot', icon: '/images/logos/graineFoot.png', description: 'Événements sportifs' },
+  { name: 'Orllati', icon: '/images/logos/Orllati.png', description: 'Événements corporatifs' },
+  { name: 'Enzo Net', icon: '/images/logos/EnzoNet.png', description: 'Événements tech' },
+  { name: 'Ville de Renens', icon: '/images/logos/villeDeRenensl.png', description: 'Événements municipaux' },
+  { name: 'Le Châtelard', icon: '/images/logos/chatelard-logo.png', description: 'Événements éducatifs' },
+  { name: 'SCHR', icon: '/images/logos/SCHR.png', description: 'Événements corporatifs' },
+  { name: 'Polyval', icon: '/images/logos/polyval.png', description: 'Événements corporatifs' }
 ]
 
 const festivals = [
-  { name: 'Zumbucks', icon: '/images/logos/zumbucks.svg', description: 'Festival de musique' },
-  { name: 'Lake Parade', icon: '/images/logos/lake-parade.svg', description: 'Festival électronique' },
-  { name: 'Arcana Festival', icon: '/images/logos/arcana-festival.svg', description: 'Festival mystique' },
-  { name: 'Montreux Jazz', icon: '/images/logos/montreux-jazz.svg', description: 'Festival de jazz' },
-  { name: 'Paléo Festival', icon: '/images/logos/paleo-festival.svg', description: 'Festival de musique' },
-  { name: 'Kiyo Festival', icon: '/images/logos/kiyo-festival.svg', description: 'Festival culturel' },
-  { name: 'Shonen Pop', icon: '/images/logos/shonen-pop.svg', description: 'Festival manga' },
-  { name: 'Dragon Ball Day', icon: '/images/logos/dragon-ball-day.svg', description: 'Festival anime' },
-  { name: 'Braderie Horlofolies', icon: '/images/logos/braderie-horlofolies.svg', description: 'Festival horloger' },
-  { name: 'Festival de la Cité', icon: '/images/logos/festival-de-la-cite.svg', description: 'Festival culturel' },
-  { name: 'Festival du Film', icon: '/images/logos/festival-du-film.svg', description: 'Festival cinéma' },
-  { name: 'Festival de Danse', icon: '/images/logos/festival-de-danse.svg', description: 'Festival danse' },
-  { name: 'Festival de Rue', icon: '/images/logos/festival-de-rue.svg', description: 'Festival urbain' }
+  { name: 'Zumbucks', icon: '/images/logos/zumbruck.png', description: 'Festival de musique' },
+  { name: 'Lake Parade', icon: '/images/logos/lake.png', description: 'Festival électronique' },
+  { name: 'Arcana Festival', icon: '/images/logos/arcana.png', description: 'Festival mystique' },
+  { name: 'Montreux Jazz', icon: '/images/logos/MontreuxJazzFestival.png', description: 'Festival de jazz' },
+  { name: 'Paléo Festival', icon: '/images/logos/paleo.png', description: 'Festival de musique' },
+  { name: 'Kiyo Festival', icon: '/images/logos/kiyo.png', description: 'Festival culturel' },
+  { name: 'Shonen Pop', icon: '/images/logos/shonen.png', description: 'Festival manga' },
+  { name: 'Dragon Ball Day', icon: '/images/logos/DBD.png', description: 'Festival anime' },
+  { name: 'Braderie Horlofolies', icon: '/images/logos/Horlofolies.png', description: 'Festival horloger' },
+  { name: 'Festival de la Cité', icon: '/images/logos/cite.png', description: 'Festival culturel' },
+  { name: 'Festival du Film', icon: '/images/logos/Zurich.png', description: 'Festival cinéma' },
+  { name: 'Festival de Danse', icon: '/images/logos/danse.png', description: 'Festival danse' },
+  { name: 'Festival de Rue', icon: '/images/logos/rue.png', description: 'Festival urbain' }
 ]
 
 const sports = [
-  { name: 'Lausanne Sport', icon: '/images/logos/lausanne-sport.svg', description: 'Club de football' },
-  { name: 'Athletissima', icon: '/images/logos/athletissima.svg', description: 'Meeting d\'athlétisme' }
+  { name: 'Lausanne Sport', icon: '/images/logos/ls.png', description: 'Club de football' },
+  { name: 'Athletissima', icon: '/images/logos/athletissima.png', description: 'Meeting d\'athlétisme' }
 ]
 
 const prives = [

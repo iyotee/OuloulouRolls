@@ -15,7 +15,7 @@
         <h2 class="text-2xl font-heading mb-4" style="color: #62B1CE;">2. Prestataire de services</h2>
         <p class="mb-6">
           <strong>Ouloulou Ice Rolls</strong><br>
-          E-mail : oulouloufood@gmail.com<br>
+          E-mail : info@ouloulouicerolls.ch<br>
           Téléphone : +41 76 416 69 16<br>
           Suisse
         </p>
@@ -117,7 +117,7 @@
         <p class="mb-6">
           Pour toute question, réclamation ou exercice de vos droits, contactez-nous :<br><br>
           <strong>Ouloulou Ice Rolls</strong><br>
-          E-mail : oulouloufood@gmail.com<br>
+          E-mail : info@ouloulouicerolls.ch<br>
           Téléphone : +41 76 416 69 16<br><br>
           Nous nous engageons à répondre à toute demande dans les plus brefs délais.
         </p>

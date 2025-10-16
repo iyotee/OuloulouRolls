@@ -2,12 +2,23 @@
   <div class="min-h-screen">
     <!-- Hero Section -->
     <section class="relative h-screen flex items-center justify-center bg-gray-50 overflow-hidden">
+      <!-- Background Videos -->
+      <div class="absolute inset-0 w-full h-full">
+        <video 
+          v-for="(video, index) in backgroundVideos" 
+          :key="index"
+          :ref="`bgVideo${index}`"
+          :src="video.src"
+             :class="`absolute inset-0 w-full h-full object-cover transition-opacity duration-2000 ${video.active ? 'opacity-60' : 'opacity-0'}`"
+          autoplay
+          muted
+          loop
+          playsinline
+        ></video>
+      </div>
+      
       <div class="relative z-10 text-center text-gray-800 px-4">
         <img src="/logo.svg" alt="Ouloulou Ice Rolls" class="mx-auto h-48 lg:h-64 mb-12 drop-shadow-2xl animate-float">
-        
-        <h1 class="text-5xl lg:text-7xl font-meddon mb-12 drop-shadow-lg hero-title-mobile">
-          Glaces Roulées
-        </h1>
         
         
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -33,21 +44,15 @@
         <!-- Première section: Aventure Thaïlandaise -->
         <div class="grid lg:grid-cols-2 gap-12 items-center mb-20">
           <div class="space-y-6 text-gray-700 text-lg">
-            <h3 class="text-3xl lg:text-4xl font-windsong text-center" style="color: #62B1CE;">Une Aventure Thaïlandaise Authentique</h3>
+            <h3 class="text-3xl lg:text-4xl font-windsong text-center text-black">Une Aventure Thaïlandaise Authentique</h3>
             <p>
-              <strong>Ouloulou Ice Rolls</strong> trouve ses racines dans un road trip mémorable à travers la Thaïlande, 
-              où j'ai eu l'occasion de découvrir les fameuses glaces roulées. Fasciné par cette technique artisanale 
-              et innovante, j'ai décidé d'aller plus loin en effectuant un stage pratique sur place.
+              <strong>Ouloulou Ice Rolls</strong> est né d'un voyage en Thaïlande où j'ai découvert les glaces roulées artisanales. 
+              Fasciné par cette technique unique, j'ai effectué un stage pratique dans les marchés de Bangkok et Chiang Mai 
+              pour apprendre ce savoir-faire authentique transmis de génération en génération.
             </p>
             <p>
-              Au cœur des marchés locaux de Bangkok et Chiang Mai, j'ai appris les secrets de fabrication aux côtés 
-              d'artisans passionnés. Ce savoir-faire authentique, transmis de génération en génération, combiné à 
-              une expérience culinaire unique, m'a inspiré à lancer <strong>Ouloulou Ice Rolls</strong> pour partager 
-              cette aventure et apporter une touche de fraîcheur et d'exotisme à nos clients suisses.
-            </p>
-            <p>
-              Chaque glace roulée que nous créons raconte cette histoire d'amour entre la tradition thaïlandaise 
-              et l'innovation suisse, créant une expérience gustative inoubliable.
+              Cette expérience culinaire m'a inspiré à créer <strong>Ouloulou Ice Rolls</strong> en Suisse, combinant la tradition 
+              thaïlandaise avec l'innovation locale pour offrir une expérience gustative inoubliable à nos clients.
             </p>
           </div>
           
@@ -63,21 +68,15 @@
           </div>
           
           <div class="space-y-6 text-gray-700 text-lg order-1 lg:order-2">
-            <h3 class="text-3xl lg:text-4xl font-windsong text-center" style="color: #62B1CE;">Excellence et Qualité Suisse</h3>
+            <h3 class="text-3xl lg:text-4xl font-windsong text-center text-black">Excellence et Qualité Suisse</h3>
             <p>
-              Chez <strong>Ouloulou Ice Rolls</strong>, nous accordons une importance primordiale à la qualité de nos ingrédients. 
-              Nous nous approvisionnons localement auprès de producteurs suisses pour offrir des produits frais et soutenir 
-              l'économie de notre région, tout en respectant les standards de qualité helvétiques.
+              Chez <strong>Ouloulou Ice Rolls</strong>, nous privilégions les ingrédients locaux suisses pour garantir fraîcheur 
+              et qualité, tout en soutenant l'économie régionale. Fruits de saison, produits laitiers locaux et ingrédients 
+              premium sont sélectionnés avec soin.
             </p>
             <p>
-              Fruits de saison cueillis à maturité, produits laitiers de fermes locales et ingrédients premium sont sélectionnés 
-              avec le plus grand soin afin de garantir une saveur authentique dans chaque rouleau de glace. Pour compléter notre 
-              offre et assurer une variété de goûts exceptionnels, nous travaillons également avec des fournisseurs de grande 
-              distribution renommés, garantissant ainsi la traçabilité et la sécurité alimentaire.
-            </p>
-            <p>
-              Cette approche hybride nous permet d'allier tradition locale et qualité constante, créant des glaces à la fois 
-              savoureuses, accessibles et conformes aux exigences suisses les plus strictes.
+              Nous travaillons également avec des fournisseurs renommés pour assurer variété et traçabilité, créant ainsi 
+              des glaces savoureuses qui respectent les standards suisses les plus exigeants.
             </p>
           </div>
         </div>
@@ -85,26 +84,24 @@
         <!-- Troisième section: Street Food & Événements Premium -->
         <div class="grid lg:grid-cols-2 gap-12 items-center mb-20">
           <div class="space-y-6 text-gray-700 text-lg">
-            <h3 class="text-3xl lg:text-4xl font-windsong text-center" style="color: #62B1CE;">Street Food & Événements Premium</h3>
+            <h3 class="text-3xl lg:text-4xl font-windsong text-center text-black">Street Food & Événements Premium</h3>
             <p>
-              Chez <strong>Ouloulou Ice Rolls</strong>, l'énergie et l'authenticité de la street food thaïlandaise sont au cœur 
-              de notre passion. C'est cette ambiance vivante, conviviale et spontanée qui nous inspire au quotidien et qui 
-              fait de chaque service une véritable expérience théâtrale.
+              <strong>Ouloulou Ice Rolls</strong> capture l'énergie authentique de la street food thaïlandaise, créant une 
+              expérience théâtrale vivante et conviviale à chaque service. Cette ambiance spontanée est au cœur de notre passion.
             </p>
             <p>
-              Cependant, nous savons aussi nous adapter avec élégance pour des événements spéciaux tels que mariages, 
-              anniversaires, lancements de produits ou célébrations d'entreprise. Nous transformons l'expérience street food 
-              en une prestation sur mesure, sophistiquée et adaptée aux besoins de chaque occasion.
+              Nous nous adaptons également avec élégance pour des événements spéciaux : mariages, anniversaires, lancements 
+              de produits ou célébrations d'entreprise. Nous transformons l'expérience street food en prestation sur mesure 
+              et sophistiquée.
             </p>
             <p>
-              Que ce soit pour un cocktail raffiné dans un hôtel 5 étoiles ou un moment de convivialité lors d'un festival, 
-              nous apportons notre savoir-faire unique, en alliant spectacle culinaire et plaisir gourmand, pour faire de 
-              chaque événement un moment mémorable et Instagram-worthy.
+              Que ce soit pour un cocktail raffiné dans un hôtel 5 étoiles ou un festival, nous apportons notre savoir-faire 
+              unique alliant spectacle culinaire et plaisir gourmand pour des moments mémorables et Instagram-worthy.
             </p>
           </div>
           
           <div class="rounded-2xl overflow-hidden shadow-2xl max-w-md mx-auto">
-            <img src="/images/WhatsApp Image 2025-10-14 à 15.49.28_845af5e5.jpg" alt="Événements et street food" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+            <img src="/images/WhatsApp Image 2025-10-14 à 15.48.35_0e9164b4.jpg" alt="Événements et street food" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
           </div>
         </div>
       </div>
@@ -127,6 +124,16 @@ import { ref, onMounted, onUnmounted } from 'vue'
 
 const showScrollButton = ref(false)
 
+// Background videos configuration
+const backgroundVideos = ref([
+  { src: '/images/gallery/WhatsApp Vidéo 2025-10-14 à 15.33.51_26420f74.mp4', active: true },
+  { src: '/images/gallery/WhatsApp Vidéo 2025-10-14 à 15.49.39_9ea5c2b3.mp4', active: false },
+  { src: '/images/gallery/WhatsApp Vidéo 2025-10-14 à 15.48.32_d79c1f4e.mp4', active: false },
+  { src: '/images/gallery/WhatsApp Vidéo 2025-10-14 à 15.48.33_f33d3e99.mp4', active: false }
+])
+
+let videoTransitionInterval = null
+
 const scrollToTop = () => {
   window.scrollTo({
     top: 0,
@@ -138,12 +145,31 @@ const handleScroll = () => {
   showScrollButton.value = window.scrollY > 300
 }
 
+const startVideoTransitions = () => {
+  let currentIndex = 0
+  
+  videoTransitionInterval = setInterval(() => {
+    // Deactivate current video
+    backgroundVideos.value[currentIndex].active = false
+    
+    // Move to next video
+    currentIndex = (currentIndex + 1) % backgroundVideos.value.length
+    
+    // Activate next video
+    backgroundVideos.value[currentIndex].active = true
+  }, 8000) // Change video every 8 seconds
+}
+
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
+  startVideoTransitions()
 })
 
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
+  if (videoTransitionInterval) {
+    clearInterval(videoTransitionInterval)
+  }
 })
 </script>
 

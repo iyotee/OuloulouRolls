@@ -18,6 +18,15 @@
             {{ link.name }}
             <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-accent-indigo to-purple-600 group-hover:w-full transition-all duration-300"></span>
           </router-link>
+          <!-- WhatsApp Icon -->
+          <a 
+            href="https://wa.me/41767438984"
+            target="_blank"
+            class="text-gray-700 hover:text-black transition-all duration-200 hover:scale-110"
+            title="Nous contacter sur WhatsApp"
+          >
+            <i class="fab fa-whatsapp text-2xl"></i>
+          </a>
         </div>
 
         <!-- Mobile Menu Button -->
@@ -64,6 +73,16 @@
             >
               {{ link.name }}
             </router-link>
+            <!-- WhatsApp Icon Mobile -->
+            <a 
+              href="https://wa.me/41767438984"
+              target="_blank"
+              @click="closeMenu"
+              class="flex items-center px-4 py-3 text-gray-700 hover:text-black hover:bg-gray-50 rounded-lg font-medium transition-all duration-200"
+            >
+              <i class="fab fa-whatsapp text-lg mr-3"></i>
+              WhatsApp
+            </a>
           </div>
         </div>
       </transition>
