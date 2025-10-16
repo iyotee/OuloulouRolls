@@ -99,9 +99,8 @@
       v-show="showScrollButton"
       @click="scrollToTop"
       class="fixed bottom-6 right-6 z-40 w-14 h-14 bg-white border border-gray-300 rounded-full shadow-lg flex items-center justify-center hover:shadow-xl transition-all duration-300 md:hidden"
-      style="background: linear-gradient(135deg, #5AAECC 0%, #62B1CE 100%); border: none;"
     >
-      <i class="fas fa-chevron-up text-white text-xl"></i>
+      <i class="fas fa-chevron-up text-black text-xl"></i>
     </button>
   </div>
 </template>
