@@ -294,8 +294,8 @@ See [LICENSE](LICENSE) file for details.
 ## 📞 Contact
 
 **Ouloulou Ice Rolls**  
-📧 Email: contact@ouloulourolls.ch  
-🌐 Website: [ouloulourolls.ch](https://ouloulourolls.ch)  
+📧 Email: info@ouloulouicerolls.ch  
+🌐 Website: [ouloulouicerolls.ch](https://ouloulouicerolls.ch)  
 📱 Instagram: [@ouloulouicerolls](https://instagram.com/ouloulouicerolls)  
 📘 Facebook: [OuloulouIceRolls](https://facebook.com/ouloulouicerolls)
 
