@@ -95,9 +95,8 @@
                 loop
                 playsinline
                 webkit-playsinline
-                preload="none"
-                controls="false"
-                disablepictureinpicture
+                preload="metadata"
+                poster=""
                 @loadstart="handleVideoLoad"
                 @error="handleVideoError"
                 @click="openModal(item)"
@@ -166,8 +165,10 @@
             autoplay
             playsinline
             webkit-playsinline
+            preload="metadata"
             disablepictureinpicture
             controlslist="nodownload nofullscreen noremoteplayback"
+            @error="handleModalVideoError"
           ></video>
         </div>
       </div>
@@ -309,9 +310,26 @@ const handleVideoLoad = (event) => {
   video.playsInline = true
 }
 
+const handleModalVideoError = (event) => {
+  console.warn('Modal video failed to load:', event.target.src)
+  // Fermer le modal si la vidéo ne peut pas être chargée
+  closeModal()
+}
+
 const handleVideoError = (event) => {
   console.warn('Video failed to load:', event.target.src)
-  // Could add fallback image here if needed
+  // Remplacer la vidéo par une image de fallback
+  const videoElement = event.target
+  const parentElement = videoElement.parentElement
+  
+  // Créer une image de fallback
+  const fallbackImg = document.createElement('img')
+  fallbackImg.src = '/images/gallery/WhatsApp Image 2025-10-14 à 15.48.31_6b94c4ce.jpg' // Image de fallback
+  fallbackImg.className = 'w-full h-full object-cover hover:scale-105 transition-all duration-300'
+  fallbackImg.alt = 'Vidéo non disponible'
+  
+  // Remplacer la vidéo par l'image
+  parentElement.replaceChild(fallbackImg, videoElement)
 }
 
 const galleryItems = [
