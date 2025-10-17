@@ -16,6 +16,7 @@
           playsinline
           webkit-playsinline
           preload="auto"
+          @loadeddata="setVideoSpeed"
         ></video>
       </div>
       
@@ -211,16 +212,16 @@
           
         <!-- Trustindex Widget -->
         <div class="max-w-6xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-          <div 
-            class="trustindex-widget" 
-            data-widget-id="339921256c483916a14616b02c8"
-          >
-            <!-- Fallback content -->
-            <div class="text-center py-8">
-              <p class="text-gray-500 mb-4">Chargement des avis Google...</p>
-              <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-accent-indigo mx-auto"></div>
-            </div>
-          </div>
+          <iframe 
+            src="https://cdn.trustindex.io/amp-widget.html#339921256c483916a14616b02c8"
+            sandbox="allow-scripts allow-same-origin"
+            width="100%" 
+            height="270"
+            frameborder="0"
+            scrolling="no"
+            style="border: none; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);"
+            title="Avis Google Ouloulou Ice Rolls"
+          ></iframe>
         </div>
         
         <!-- Call to Action -->
@@ -230,20 +231,21 @@
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
-              href="https://www.google.com/search?q=Ouloulou+Ice+Rolls+avis" 
+              href="https://www.google.com/search?num=10&sca_esv=602bc0460517bd79&biw=1271&bih=1334&sxsrf=AE3TifNvpzIJRQ84MAP8aA1sBsf_fqliVw:1760723562281&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-E5j_cD7E7nYIL5oVuXxlXk9TR3qOyrTs-lcEdBp_fBYmqCeUZQ8r8N6thruYSyUB5flYnf9WR6plNsbNMmKbiWfjen1c&q=Ouloulou+ice+rolls+Avis&sa=X&ved=2ahUKEwimyuiz5quQAxVn-gIHHf1uClEQ0bkNegQIIBAE"
               target="_blank"
               class="inline-flex items-center px-6 py-3 bg-accent-indigo text-white rounded-full font-semibold hover:bg-purple-600 transition-all duration-200"
             >
               <i class="fab fa-google mr-2"></i>
               Voir tous nos avis Google
             </a>
-            <router-link 
-              to="/contact" 
+            <a 
+              href="https://maps.app.goo.gl/A7yBE7Et839Pj1p59" 
+              target="_blank"
               class="inline-flex items-center px-6 py-3 bg-transparent text-accent-indigo border-2 border-accent-indigo rounded-full font-semibold hover:bg-accent-indigo hover:text-white transition-all duration-200"
             >
               <i class="fas fa-star mr-2"></i>
               Laisser un avis
-            </router-link>
+            </a>
           </div>
         </div>
       </div>
@@ -292,6 +294,11 @@ const scrollToTop = () => {
 
 const handleScroll = () => {
   showScrollButton.value = window.scrollY > 300
+}
+
+const setVideoSpeed = (event) => {
+  const video = event.target
+  video.playbackRate = 0.8
 }
 
 const startVideoTransitions = () => {
