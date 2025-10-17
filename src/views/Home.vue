@@ -173,7 +173,7 @@
           <!-- Création 3 -->
           <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
             <div class="text-center mb-6">
-              <img src="/images/icecream_cookies.png" alt="La Tarte aux Pommes" class="w-40 h-40 object-contain mx-auto mb-4">
+              <img src="/images/icecream_tarte_pommes.png" alt="La Tarte aux Pommes" class="w-40 h-40 object-contain mx-auto mb-4">
             </div>
             <h3 class="text-2xl font-heading font-bold text-gray-800 mb-4">La Tarte aux Pommes</h3>
             <p class="text-gray-600 mb-6">La douceur des pommes caramélisées, mariée aux notes chaudes de la cannelle et aux morceaux de pommes croquantes. Une création réconfortante qui évoque les saveurs d'automne et les desserts de grand-mère.</p>
