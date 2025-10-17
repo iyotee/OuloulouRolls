@@ -1,10 +1,10 @@
 <template>
   <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-lg border-b border-gray-200 shadow-lg">
     <nav class="container mx-auto px-3 sm:px-4 lg:px-8">
-      <div class="flex items-center justify-between h-16 sm:h-18 md:h-20">
+      <div class="flex items-center justify-between h-20 sm:h-22 md:h-20 lg:h-22">
         <!-- Logo -->
         <router-link to="/" class="flex items-center flex-shrink-0">
-          <img src="/logo.svg" alt="Ouloulou Ice Rolls" class="h-10 sm:h-12 md:h-14 lg:h-16 transition-transform hover:scale-105">
+          <img src="/logo.svg" alt="Ouloulou Ice Rolls" class="h-16 sm:h-18 md:h-14 lg:h-16 xl:h-18 transition-transform hover:scale-105">
         </router-link>
 
         <!-- Desktop Menu -->
@@ -53,7 +53,7 @@
       >
         <div 
           v-if="isMenuOpen" 
-          class="md:hidden absolute top-16 sm:top-18 md:top-20 left-0 right-0 bg-white border-t border-gray-200 shadow-2xl"
+          class="md:hidden absolute top-20 sm:top-22 left-0 right-0 bg-white border-t border-gray-200 shadow-2xl"
         >
           <div class="container mx-auto px-3 sm:px-4 py-4 sm:py-6 space-y-3 sm:space-y-4">
             <router-link 
@@ -179,13 +179,13 @@ onMounted(() => {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   }
   
-  /* Logo encore plus petit sur très petits écrans */
+  /* Logo adapté sur très petits écrans */
   .flex.items-center.justify-between > a:first-child {
     max-width: calc(100% - 50px);
   }
   
   .flex.items-center.justify-between > a:first-child img {
-    max-height: 2rem;
+    max-height: 3rem;
   }
 }
 
@@ -219,7 +219,7 @@ onMounted(() => {
   /* S'assurer que le conteneur flex ne compresse pas le bouton */
   .flex.items-center.justify-between {
     align-items: center;
-    min-height: 4rem;
+    min-height: 5rem;
   }
   
   /* Forcer la visibilité sur tous les écrans mobiles */

@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen pt-24 sm:pt-28 lg:pt-32">
+  <div class="min-h-screen pt-20 sm:pt-22 md:pt-20 lg:pt-22">
     <!-- Toast Notification -->
     <div 
       v-if="showToast"
