@@ -23,7 +23,7 @@
         <!-- Mobile Menu Button -->
         <button 
           @click="toggleMenu"
-          class="md:hidden flex flex-col items-center justify-center w-12 h-12 sm:w-14 sm:h-14 space-y-1.5 bg-white border-2 border-gray-300 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 flex-shrink-0 mx-2 relative z-50"
+          class="md:hidden flex flex-col items-center justify-center w-12 h-12 sm:w-14 sm:h-14 space-y-1.5 bg-white border-2 border-gray-300 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 flex-shrink-0 mx-2 relative z-[9999]"
           :class="{ 'space-y-0': isMenuOpen }"
           aria-label="Menu de navigation"
         >
@@ -73,8 +73,10 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted, nextTick } from 'vue'
+import { useRouter } from 'vue-router'
 
+const router = useRouter()
 const isMenuOpen = ref(false)
 
 const navLinks = [
@@ -92,6 +94,31 @@ const toggleMenu = () => {
 const closeMenu = () => {
   isMenuOpen.value = false
 }
+
+// Forcer la visibilité du bouton hamburger SEULEMENT sur mobile
+const forceButtonVisibility = () => {
+  nextTick(() => {
+    const button = document.querySelector('button[aria-label="Menu de navigation"]')
+    if (button && window.innerWidth <= 768) {
+      button.style.display = 'flex'
+      button.style.visibility = 'visible'
+      button.style.opacity = '1'
+      button.style.zIndex = '9999'
+    } else if (button && window.innerWidth > 768) {
+      button.style.display = 'none'
+    }
+  })
+}
+
+// Écouter les changements de route
+router.afterEach(() => {
+  closeMenu()
+  forceButtonVisibility()
+})
+
+onMounted(() => {
+  forceButtonVisibility()
+})
 </script>
 
 <style scoped>
@@ -170,23 +197,41 @@ const closeMenu = () => {
   }
 }
 
-/* Règle générale pour s'assurer que le bouton hamburger reste toujours visible */
+/* Règle générale pour s'assurer que le bouton hamburger reste toujours visible SEULEMENT sur mobile */
 @media screen and (max-width: 768px) {
   button[aria-label="Menu de navigation"] {
-    position: relative;
-    z-index: 30;
+    position: relative !important;
+    z-index: 9999 !important;
     display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
     min-width: 44px;
     min-height: 44px;
+    background-color: white !important;
+    border: 2px solid #d1d5db !important;
+    border-radius: 0.75rem !important;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
   }
   
   /* S'assurer que le conteneur flex ne compresse pas le bouton */
   .flex.items-center.justify-between {
     align-items: center;
     min-height: 4rem;
+  }
+  
+  /* Forcer la visibilité sur tous les écrans mobiles */
+  .md\\:hidden {
+    display: flex !important;
+  }
+}
+
+/* Sur les écrans moyens et larges, respecter la classe md:hidden */
+@media screen and (min-width: 769px) {
+  button[aria-label="Menu de navigation"] {
+    display: none !important;
   }
 }
 </style>

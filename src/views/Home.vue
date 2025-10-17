@@ -55,21 +55,21 @@
 
         <!-- Expertise Details -->
         <div class="grid lg:grid-cols-2 gap-12 items-center">
-          <div data-aos="fade-right">
+          <div class="px-4 sm:px-6 lg:px-0" data-aos="fade-right">
             <h3 class="text-3xl font-heading mb-6 text-gray-800">
               Pourquoi nous choisir ?
             </h3>
             <div class="space-y-4">
               <div class="flex items-center" data-aos="fade-right" data-aos-delay="100">
-                <i class="fas fa-check-circle text-black text-xl mr-3"></i>
+                <i class="fas fa-apple-alt text-gray-600 text-xl mr-3"></i>
                 <span class="text-gray-700">Ingrédients frais et locaux</span>
               </div>
               <div class="flex items-center" data-aos="fade-right" data-aos-delay="200">
-                <i class="fas fa-check-circle text-black text-xl mr-3"></i>
+                <i class="fas fa-birthday-cake text-gray-600 text-xl mr-3"></i>
                 <span class="text-gray-700">Animation spectaculaire en direct</span>
               </div>
               <div class="flex items-center" data-aos="fade-right" data-aos-delay="300">
-                <i class="fas fa-check-circle text-black text-xl mr-3"></i>
+                <i class="fas fa-user-tie text-gray-600 text-xl mr-3"></i>
                 <span class="text-gray-700">Service professionnel et fiable</span>
               </div>
             </div>
@@ -250,7 +250,7 @@
           <a 
             href="https://www.google.com/search?num=10&sca_esv=602bc0460517bd79&biw=1271&bih=1334&sxsrf=AE3TifNvpzIJRQ84MAP8aA1sBsf_fqliVw:1760723562281&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-E5j_cD7E7nYIL5oVuXxlXk9TR3qOyrTs-lcEdBp_fBYmqCeUZQ8r8N6thruYSyUB5flYnf9WR6plNsbNMmKbiWfjen1c&q=Ouloulou+ice+rolls+Avis&sa=X&ved=2ahUKEwimyuiz5quQAxVn-gIHHf1uClEQ0bkNegQIIBAE" 
             target="_blank"
-            class="inline-flex items-center px-6 py-3 bg-accent-indigo text-white rounded-full font-semibold hover:bg-purple-600 transition-all duration-200"
+            class="inline-flex items-center px-6 py-3 bg-gray-800 text-white rounded-full font-semibold hover:bg-gray-900 transition-all duration-200"
           >
             <i class="fab fa-google mr-2 text-white"></i>
             Voir tous nos avis Google
