@@ -224,7 +224,7 @@ const currentImageIndex = ref(0)
 const backgroundVideos = ref([
   { src: '/images/gallery/WhatsApp Vidéo 2025-10-14 à 15.48.32_d79c1f4e.mp4', active: true },
   { src: '/images/gallery/WhatsApp Vidéo 2025-10-14 à 15.49.29_e7a48784.mp4', active: false },
-  { src: '/images/gallery/WhatsApp Vidéo 2025-10-14 à 15.49.33_f934de68.mp4', active: false }
+  { src: '/images/gallery/WhatsApp Vidéo 2025-10-14 à 15.49.32_04be9d3b.mp4', active: false }
 ])
 
 let videoTransitionInterval = null
