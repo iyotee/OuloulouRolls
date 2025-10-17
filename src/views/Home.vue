@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen">
     <!-- Hero Section -->
-    <section class="relative h-screen flex items-center justify-center bg-gray-50 overflow-hidden">
+    <section class="relative h-screen flex items-center justify-center bg-gray-50 overflow-hidden" style="margin-top: -5rem;">
       <!-- Background Videos -->
       <div class="absolute inset-0 w-full h-full video-container">
         <video 
