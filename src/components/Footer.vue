@@ -7,7 +7,7 @@
         <div class="text-center mb-8">
           <img src="/logo.svg" alt="Ouloulou Ice Rolls" class="h-36 mx-auto mb-4">
           <p class="text-gray-600 mb-6">
-            Glaces roulées artisanales inspirées de la Thaïlande pour vos événements.
+            Des Ice Rolls préparés sous vos yeux, un spectacle gourmand qui transforme chaque événement en moment inoubliable.
           </p>
           <!-- Social Icons Only -->
           <div class="flex justify-center gap-4">
@@ -50,7 +50,7 @@
         <div>
           <img src="/logo.svg" alt="Ouloulou Ice Rolls" class="h-36 mb-4">
           <p class="text-gray-600 mb-4">
-            Glaces roulées artisanales inspirées de la Thaïlande pour vos événements.
+            Des Ice Rolls préparés sous vos yeux, un spectacle gourmand qui transforme chaque événement en moment inoubliable.
           </p>
           <div class="flex flex-wrap gap-3">
             <a 

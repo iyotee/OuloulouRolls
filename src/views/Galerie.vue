@@ -85,19 +85,22 @@
                 v-if="item.type === 'image'"
                 :src="item.src" 
                 :alt="item.title"
-                class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300"
+                class="w-full h-full object-cover hover:scale-105 transition-all duration-300"
               >
               <video 
                 v-else
                 :src="item.src"
-                class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300"
+                class="w-full h-full object-cover hover:scale-105 transition-all duration-300"
                 muted
                 loop
                 playsinline
                 webkit-playsinline
-                preload="metadata"
+                preload="none"
+                controls="false"
+                disablepictureinpicture
                 @loadstart="handleVideoLoad"
                 @error="handleVideoError"
+                @click="openModal(item)"
               ></video>
             </div>
             <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -163,7 +166,9 @@
             autoplay
             playsinline
             webkit-playsinline
-          >          </video>
+            disablepictureinpicture
+            controlslist="nodownload nofullscreen noremoteplayback"
+          ></video>
         </div>
       </div>
     </div>

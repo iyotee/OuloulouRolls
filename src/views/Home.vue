@@ -42,12 +42,12 @@
         <div class="text-center mb-12 sm:mb-16" data-aos="fade-up">
           <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-windsong mb-4 sm:mb-6 text-gray-800">
             Notre Expertise
-          </h2>
+        </h2>
           <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-2">
-            <strong>Ouloulou Ice Rolls</strong> trouve ses racines dans un road trip en Thaïlande où nous avons découvert les glaces roulées. Fascinés par cette technique, nous avons effectué un stage pratique sur place, apprenant les secrets de fabrication aux côtés d'artisans locaux pour partager cette aventure gustative.
+            <strong>Ouloulou Ice Rolls</strong> trouve ses racines dans un road trip en Thaïlande où nous avons découvert les glaces roulées. Fascinés par cette technique, nous avons effectué un stage pratique sur place, apprenant les secrets de fabrication aux côtés d'artisans locaux pour partager cette aventure gustative. Faites vibrer vos invités — demandez votre devis dès aujourd'hui !
           </p>
-        </div>
-
+          </div>
+          
 
         <!-- Expertise Details -->
         <div class="grid lg:grid-cols-2 gap-12 items-center">
@@ -127,18 +127,18 @@
           <!-- Création 1 -->
           <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
             <div class="text-center mb-6">
-              <img src="/images/icecream_pistache .png" alt="Émeraude Orientale" class="w-44 h-44 object-contain mx-auto mb-4">
+              <img src="/images/icecream_pistache .png" alt="La Pistacchio" class="w-44 h-44 object-contain mx-auto mb-4">
             </div>
-            <h3 class="text-2xl font-heading font-bold text-gray-800 mb-4">Émeraude Orientale</h3>
-            <p class="text-gray-600 mb-6">L'alliance sucrée-salée parfaite : la douceur florale de l'oranger est bousculée par l'intensité de la pistache. Une création gourmande à la finale croquante et mémorable.</p>
+            <h3 class="text-2xl font-heading font-bold text-gray-800 mb-4">La Pistacchio</h3>
+            <p class="text-gray-600 mb-6">L'alliance sucrée-salée parfaite : la douceur de la pistache est sublimée par des notes gourmandes. Une création authentique à la finale croquante et mémorable.</p>
             <ul class="space-y-2">
               <li class="flex items-center text-gray-700">
                 <i class="fas fa-check text-accent-indigo mr-3"></i>
-                Fleur d'Oranger
+                Pistache Authentique
               </li>
               <li class="flex items-center text-gray-700">
                 <i class="fas fa-check text-accent-indigo mr-3"></i>
-                Pistache Salée
+                Notes Salées
               </li>
               <li class="flex items-center text-gray-700">
                 <i class="fas fa-check text-accent-indigo mr-3"></i>
@@ -150,10 +150,10 @@
           <!-- Création 2 -->
           <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
             <div class="text-center mb-6">
-              <img src="/images/icecream_strawberry.png" alt="Rouge Passion" class="w-40 h-40 object-contain mx-auto mb-4">
+              <img src="/images/icecream_strawberry.png" alt="La Fraise Citron Limette" class="w-40 h-40 object-contain mx-auto mb-4">
             </div>
-            <h3 class="text-2xl font-heading font-bold text-gray-800 mb-4">Rouge Passion</h3>
-            <p class="text-gray-600 mb-6">La fraîcheur éclatante des fraises de saison, mariée à la douceur crémeuse de la vanille bourbon. Une explosion de saveurs fruitées qui éveille les papilles avec une finale rafraîchissante.</p>
+            <h3 class="text-2xl font-heading font-bold text-gray-800 mb-4">La Fraise Citron Limette</h3>
+            <p class="text-gray-600 mb-6">La fraîcheur éclatante des fraises de saison, mariée aux notes acidulées du citron et de la limette. Une explosion de saveurs fruitées et rafraîchissantes qui éveille les papilles.</p>
             <ul class="space-y-2">
               <li class="flex items-center text-gray-700">
                 <i class="fas fa-check text-accent-indigo mr-3"></i>
@@ -161,36 +161,89 @@
               </li>
               <li class="flex items-center text-gray-700">
                 <i class="fas fa-check text-accent-indigo mr-3"></i>
-                Vanille Bourbon
+                Citron Acidulé
               </li>
               <li class="flex items-center text-gray-700">
                 <i class="fas fa-check text-accent-indigo mr-3"></i>
-                Coulis de Fruits
+                Limette Rafraîchissante
               </li>
             </ul>
           </div>
-
+          
           <!-- Création 3 -->
           <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
             <div class="text-center mb-6">
-              <img src="/images/icecream_cookies.png" alt="Choco-Crunch Deluxe" class="w-40 h-40 object-contain mx-auto mb-4">
+              <img src="/images/icecream_cookies.png" alt="La Tarte aux Pommes" class="w-40 h-40 object-contain mx-auto mb-4">
             </div>
-            <h3 class="text-2xl font-heading font-bold text-gray-800 mb-4">Choco-Crunch Deluxe</h3>
-            <p class="text-gray-600 mb-6">L'iconique biscuit cacaoté, généreusement concassé dans une onctueuse crème glacée artisanale. Une gourmandise régressive et incontournable, pour un plaisir croquant et immédiat.</p>
+            <h3 class="text-2xl font-heading font-bold text-gray-800 mb-4">La Tarte aux Pommes</h3>
+            <p class="text-gray-600 mb-6">La douceur des pommes caramélisées, mariée aux notes chaudes de la cannelle et aux morceaux de pommes croquantes. Une création réconfortante qui évoque les saveurs d'automne et les desserts de grand-mère.</p>
             <ul class="space-y-2">
               <li class="flex items-center text-gray-700">
                 <i class="fas fa-check text-accent-indigo mr-3"></i>
-                Cookies Chocolat
+                Pommes Caramélisées
               </li>
               <li class="flex items-center text-gray-700">
                 <i class="fas fa-check text-accent-indigo mr-3"></i>
-                Chocolat Noir
+                Cannelle Chaude
               </li>
               <li class="flex items-center text-gray-700">
                 <i class="fas fa-check text-accent-indigo mr-3"></i>
-                Base Coco
+                Morceaux Croquants
               </li>
             </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Google Reviews Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4 lg:px-8">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <p class="text-accent-indigo font-semibold mb-4">Témoignages</p>
+          <h2 class="text-4xl lg:text-5xl font-windsong mb-6 text-gray-800">
+            Ce qu'en disent nos clients
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Découvrez les avis authentiques de nos clients satisfaits qui ont vécu l'expérience Ouloulou Ice Rolls.
+            </p>
+          </div>
+          
+        <!-- Trustindex Widget -->
+        <div class="max-w-6xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+          <div 
+            class="trustindex-widget" 
+            data-widget-id="339921256c483916a14616b02c8"
+          >
+            <!-- Fallback content -->
+            <div class="text-center py-8">
+              <p class="text-gray-500 mb-4">Chargement des avis Google...</p>
+              <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-accent-indigo mx-auto"></div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Call to Action -->
+        <div class="text-center mt-16" data-aos="fade-up" data-aos-delay="400">
+          <p class="text-lg text-gray-600 mb-6">
+            Vous aussi, partagez votre expérience avec nous !
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a 
+              href="https://www.google.com/search?q=Ouloulou+Ice+Rolls+avis" 
+              target="_blank"
+              class="inline-flex items-center px-6 py-3 bg-accent-indigo text-white rounded-full font-semibold hover:bg-purple-600 transition-all duration-200"
+            >
+              <i class="fab fa-google mr-2"></i>
+              Voir tous nos avis Google
+            </a>
+            <router-link 
+              to="/contact" 
+              class="inline-flex items-center px-6 py-3 bg-transparent text-accent-indigo border-2 border-accent-indigo rounded-full font-semibold hover:bg-accent-indigo hover:text-white transition-all duration-200"
+            >
+              <i class="fas fa-star mr-2"></i>
+              Laisser un avis
+            </router-link>
           </div>
         </div>
       </div>
