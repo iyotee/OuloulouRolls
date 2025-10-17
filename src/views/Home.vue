@@ -19,16 +19,16 @@
         ></video>
       </div>
       
-      <div class="relative z-10 text-center text-gray-800 px-4">
-        <img src="/logo.svg" alt="Ouloulou Ice Rolls" class="mx-auto h-48 lg:h-64 mb-12 drop-shadow-2xl animate-float">
+      <div class="relative z-10 text-center text-gray-800 px-3 sm:px-4">
+        <img src="/logo.svg" alt="Ouloulou Ice Rolls" class="mx-auto h-32 xs:h-40 sm:h-48 md:h-56 lg:h-64 mb-8 sm:mb-12 drop-shadow-2xl animate-float">
         
         
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <router-link to="/contact" class="btn-primary">
+        <div class="flex flex-col xs:flex-row gap-3 sm:gap-4 justify-center">
+          <router-link to="/contact" class="btn-primary text-sm sm:text-base px-4 sm:px-6 py-2.5 sm:py-3">
             <i class="fas fa-calendar-alt mr-2"></i>
             Demander un devis
           </router-link>
-          <router-link to="/galerie" class="px-6 py-3 bg-transparent text-gray-800 border border-gray-800 rounded-full font-semibold hover:bg-gray-100 transition-all duration-200 flex items-center justify-center">
+          <router-link to="/galerie" class="px-4 sm:px-6 py-2.5 sm:py-3 bg-transparent text-gray-800 border border-gray-800 rounded-full font-semibold hover:bg-gray-100 transition-all duration-200 flex items-center justify-center text-sm sm:text-base">
             <i class="fas fa-images mr-2"></i>
             Voir nos créations
           </router-link>
@@ -37,13 +37,13 @@
     </section>
 
     <!-- About Section -->
-    <section class="py-20 bg-gray-50">
-      <div class="container mx-auto px-4 lg:px-8">
-        <div class="text-center mb-16" data-aos="fade-up">
-          <h2 class="text-4xl lg:text-5xl font-windsong mb-6 text-gray-800">
+    <section class="py-12 sm:py-16 md:py-20 bg-gray-50">
+      <div class="container mx-auto px-3 sm:px-4 lg:px-8">
+        <div class="text-center mb-12 sm:mb-16" data-aos="fade-up">
+          <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-windsong mb-4 sm:mb-6 text-gray-800">
             Notre Expertise
           </h2>
-          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-2">
             <strong>Ouloulou Ice Rolls</strong> trouve ses racines dans un road trip en Thaïlande où nous avons découvert les glaces roulées. Fascinés par cette technique, nous avons effectué un stage pratique sur place, apprenant les secrets de fabrication aux côtés d'artisans locaux pour partager cette aventure gustative.
           </p>
         </div>
@@ -371,6 +371,61 @@ onUnmounted(() => {
   .video-container {
     /* Prevent overflow issues on mobile Edge */
     -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Améliorations spécifiques pour les écrans 18:9 (Samsung S24, etc.) */
+@media screen and (max-width: 414px) and (min-aspect-ratio: 16/9) {
+  .container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  
+  /* Ajuster l'espacement des sections */
+  section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  
+  /* Améliorer la lisibilité sur les écrans étroits */
+  h2 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+  
+  p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+  
+  /* Ajuster les boutons pour les écrans étroits */
+  .btn-primary {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* Améliorations pour les écrans très petits */
+@media screen and (max-width: 375px) {
+  .container {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  
+  /* Réduire encore plus l'espacement si nécessaire */
+  section {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  
+  p {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
   }
 }
 </style>

@@ -3,6 +3,18 @@ export default {
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      screens: {
+        xs: "375px", // iPhone SE, petits écrans
+        sm: "640px", // Tablettes portrait
+        md: "768px", // Tablettes paysage
+        lg: "1024px", // Laptops
+        xl: "1280px", // Desktops
+        "2xl": "1536px", // Large desktops
+        mobile: "390px", // Samsung S24 et similaires
+        "mobile-lg": "414px", // iPhone Plus, grands mobiles
+        tablet: "768px",
+        desktop: "1024px",
+      },
       fontFamily: {
         sans: ["Quicksand", "sans-serif"],
         heading: ["Bubblegum Sans", "cursive"],
