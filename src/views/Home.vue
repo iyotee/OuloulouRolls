@@ -131,7 +131,7 @@
           <!-- Création 1 -->
           <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
             <div class="text-center mb-6">
-              <img src="/images/icecream_pistache .png" alt="La Pistacchio" class="w-44 h-44 object-contain mx-auto mb-4">
+              <img src="/images/icecream_pistache .png" alt="La Pistacchio" class="w-88 h-88 object-contain mx-auto mb-4">
             </div>
             <h3 class="text-2xl font-heading font-bold text-gray-800 mb-4">La Pistacchio</h3>
             <p class="text-gray-600 mb-6">L'alliance sucrée-salée parfaite : la douceur de la pistache est sublimée par des notes gourmandes. Une création authentique à la finale croquante et mémorable.</p>
@@ -154,7 +154,7 @@
           <!-- Création 2 -->
           <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
             <div class="text-center mb-6">
-              <img src="/images/icecream_strawberry.png" alt="La Fraise Citron Limette" class="w-40 h-40 object-contain mx-auto mb-4">
+              <img src="/images/icecream_strawberry.png" alt="La Fraise Citron Limette" class="w-80 h-80 object-contain mx-auto mb-4">
             </div>
             <h3 class="text-2xl font-heading font-bold text-gray-800 mb-4">La Fraise Citron Limette</h3>
             <p class="text-gray-600 mb-6">La fraîcheur éclatante des fraises de saison, mariée aux notes acidulées du citron et de la limette. Une explosion de saveurs fruitées et rafraîchissantes qui éveille les papilles.</p>
@@ -177,7 +177,7 @@
           <!-- Création 3 -->
           <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
             <div class="text-center mb-6">
-              <img src="/images/icecream_tarte_pommes.png" alt="La Tarte aux Pommes" class="w-40 h-40 object-contain mx-auto mb-4">
+              <img src="/images/icecream_tarte_pommes.png" alt="La Tarte aux Pommes" class="w-80 h-80 object-contain mx-auto mb-4">
             </div>
             <h3 class="text-2xl font-heading font-bold text-gray-800 mb-4">La Tarte aux Pommes</h3>
             <p class="text-gray-600 mb-6">La douceur des pommes caramélisées, mariée aux notes chaudes de la cannelle et aux morceaux de pommes croquantes. Une création réconfortante qui évoque les saveurs d'automne et les desserts de grand-mère.</p>
