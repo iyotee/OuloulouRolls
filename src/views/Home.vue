@@ -72,9 +72,9 @@
               </div>
             </div>
           </div>
-          <div class="relative" data-aos="fade-left">
+          <div class="relative flex justify-center" data-aos="fade-left">
             <!-- Carrousel d'images -->
-            <div class="relative overflow-hidden rounded-2xl shadow-2xl">
+            <div class="relative overflow-hidden rounded-2xl shadow-2xl max-w-sm sm:max-w-none">
               <div class="flex transition-transform duration-500 ease-in-out" :style="{ transform: `translateX(-${currentImageIndex * 100}%)` }">
                 <div 
                   v-for="(image, index) in galleryImages" 
@@ -213,7 +213,19 @@
           
         <!-- Trustindex Widget -->
         <div class="max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-          <div class="relative w-full" style="padding-bottom: 56.25%; height: 0;">
+          <div class="relative w-full sm:hidden" style="padding-bottom: 100%; height: 0;">
+            <iframe 
+              src="https://cdn.trustindex.io/amp-widget.html#d1a58ce561b7397aef569e8c75d"
+              sandbox="allow-scripts allow-same-origin"
+              width="100%" 
+              height="100%"
+              frameborder="0"
+              scrolling="no"
+              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; background-color: white;"
+              title="Avis Google Ouloulou Ice Rolls"
+            ></iframe>
+          </div>
+          <div class="relative w-full hidden sm:block" style="padding-bottom: 56.25%; height: 0;">
             <iframe 
               src="https://cdn.trustindex.io/amp-widget.html#d1a58ce561b7397aef569e8c75d"
               sandbox="allow-scripts allow-same-origin"
