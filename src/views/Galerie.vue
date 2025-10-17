@@ -1,9 +1,9 @@
 <template>
-  <div class="min-h-screen pt-20">
+  <div class="min-h-screen pt-16 sm:pt-20">
     <!-- Page Header -->
-    <section class="py-16 bg-transparent text-gray-800">
-      <div class="container mx-auto px-4 lg:px-8 text-center">
-        <h1 class="text-5xl lg:text-7xl font-windsong mb-6" data-aos="fade-up">Notre Galerie</h1>
+    <section class="py-8 sm:py-12 lg:py-16 bg-transparent text-gray-800">
+      <div class="container mx-auto px-6 sm:px-8 lg:px-12 text-center">
+        <h1 class="text-4xl sm:text-5xl lg:text-7xl font-windsong mb-6 px-4 sm:px-6 lg:px-8" data-aos="fade-up">Notre Galerie</h1>
         <p class="text-xl lg:text-2xl max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
           Découvrez nos créations de glaces roulées en images et vidéos
         </p>
