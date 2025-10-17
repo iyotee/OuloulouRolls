@@ -10,71 +10,11 @@
       </div>
     </section>
 
-    <!-- Gallery Carousel -->
-    <section class="py-12 bg-gray-50">
-      <div class="container mx-auto px-4 lg:px-8">
-        <div class="relative rounded-2xl overflow-hidden shadow-2xl group">
-          <div class="carousel-container aspect-video relative">
-            <div 
-              v-for="(item, index) in carouselItems" 
-              :key="index"
-              class="carousel-slide absolute inset-0 transition-opacity duration-500"
-              :class="{ 'opacity-100': index === currentSlide, 'opacity-0': index !== currentSlide }"
-            >
-              <img 
-                v-if="item.type === 'image'"
-                :src="item.src" 
-                :alt="item.title"
-                class="w-full h-full object-cover"
-              >
-              <video 
-                v-else
-                :src="item.src"
-                class="w-full h-full object-cover"
-                autoplay
-                muted
-                loop
-              ></video>
-            </div>
-          </div>
-          
-          <!-- Carousel Controls -->
-          <button 
-            @click="prevSlide"
-            class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full flex items-center justify-center text-white transition-all duration-200 opacity-0 group-hover:opacity-100 hover:scale-110"
-            style="background: rgba(90, 174, 204, 0.8); backdrop-filter: blur(8px);"
-          >
-            <i class="fas fa-chevron-left text-xl"></i>
-          </button>
-          
-          <button 
-            @click="nextSlide"
-            class="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full flex items-center justify-center text-white transition-all duration-200 opacity-0 group-hover:opacity-100 hover:scale-110"
-            style="background: rgba(90, 174, 204, 0.8); backdrop-filter: blur(8px);"
-          >
-            <i class="fas fa-chevron-right text-xl"></i>
-          </button>
-          
-          <!-- Carousel Indicators -->
-          <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-            <button 
-              v-for="(item, index) in carouselItems"
-              :key="index"
-              @click="goToSlide(index)"
-              class="w-2 h-2 rounded-full transition-all duration-200"
-              :class="index === currentSlide ? 'w-8' : ''"
-              :style="index === currentSlide ? 'background: #5AAECC' : 'background: rgba(255, 255, 255, 0.5)'"
-            ></button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Gallery Content -->
+    <!-- Gallery Grid -->
     <section class="py-16">
-      <div class="container mx-auto px-4 lg:px-8">
+      <div class="container mx-auto px-3 sm:px-4 lg:px-8 max-w-full overflow-hidden">
         <!-- Gallery Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
           <div 
             v-for="item in galleryItems" 
             :key="item.id"
@@ -91,23 +31,15 @@
                 v-else
                 :src="item.src"
                 class="w-full h-full object-cover hover:scale-105 transition-all duration-300"
-                muted
-                loop
-                playsinline
-                webkit-playsinline
-                preload="metadata"
-                poster=""
-                @loadstart="handleVideoLoad"
-                @error="handleVideoError"
                 @click="openModal(item)"
               ></video>
             </div>
             <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
               <button 
                 @click="openModal(item)"
-                class="bg-white/20 backdrop-blur-md text-white px-6 py-3 rounded-full hover:bg-white/30 transition-all duration-200"
+                class="bg-white/20 backdrop-blur-md text-white px-3 sm:px-4 py-2 sm:py-3 rounded-full hover:bg-white/30 transition-all duration-200 text-sm sm:text-base"
               >
-                <i :class="item.type === 'video' ? 'fas fa-play' : 'fas fa-search-plus'" class="mr-2"></i>
+                <i :class="item.type === 'video' ? 'fas fa-play' : 'fas fa-search-plus'" class="mr-1 sm:mr-2"></i>
                 {{ item.type === 'video' ? 'Lire' : 'Agrandir' }}
               </button>
             </div>
@@ -162,13 +94,6 @@
             :src="selectedItem.src"
             class="w-full h-auto max-h-[80vh]"
             controls
-            autoplay
-            playsinline
-            webkit-playsinline
-            preload="metadata"
-            disablepictureinpicture
-            controlslist="nodownload nofullscreen noremoteplayback"
-            @error="handleModalVideoError"
           ></video>
         </div>
       </div>
@@ -363,4 +288,44 @@ const galleryItems = [
 ]
 
 </script>
+
+<style scoped>
+/* Empêcher le scroll horizontal sur tous les écrans */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+}
+
+/* S'assurer que le conteneur principal ne dépasse jamais */
+.container {
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+/* Grille responsive qui ne dépasse jamais */
+.grid {
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+/* Boutons responsive */
+@media (max-width: 640px) {
+  .bg-white\/20 {
+    padding: 0.5rem 0.75rem !important;
+    font-size: 0.75rem !important;
+  }
+}
+
+/* Modal responsive */
+@media (max-width: 768px) {
+  .fixed.inset-0 {
+    padding: 1rem !important;
+  }
+  
+  .bg-white.rounded-2xl {
+    max-width: calc(100vw - 2rem) !important;
+    max-height: calc(100vh - 2rem) !important;
+  }
+}
+</style>
 
