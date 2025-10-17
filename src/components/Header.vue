@@ -20,7 +20,7 @@
           </router-link>
           <!-- WhatsApp Icon -->
           <a 
-            href="https://wa.me/41767438984"
+            href="https://wa.me/41764166916"
             target="_blank"
             class="text-gray-700 hover:text-black transition-all duration-200 hover:scale-110"
             title="Nous contacter sur WhatsApp"
@@ -75,7 +75,7 @@
             </router-link>
             <!-- WhatsApp Icon Mobile -->
             <a 
-              href="https://wa.me/41767438984"
+              href="https://wa.me/41764166916"
               target="_blank"
               @click="closeMenu"
               class="flex items-center px-4 py-3 text-gray-700 hover:text-black hover:bg-gray-50 rounded-lg font-medium transition-all duration-200"

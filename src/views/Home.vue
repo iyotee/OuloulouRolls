@@ -3,17 +3,19 @@
     <!-- Hero Section -->
     <section class="relative h-screen flex items-center justify-center bg-gray-50 overflow-hidden">
       <!-- Background Videos -->
-      <div class="absolute inset-0 w-full h-full">
+      <div class="absolute inset-0 w-full h-full video-container">
         <video 
           v-for="(video, index) in backgroundVideos" 
           :key="index"
           :ref="`bgVideo${index}`"
           :src="video.src"
-             :class="`absolute inset-0 w-full h-full object-cover transition-opacity duration-2000 ${video.active ? 'opacity-60' : 'opacity-0'}`"
+          :class="`video-background ${video.active ? 'video-active' : 'video-inactive'}`"
           autoplay
           muted
           loop
           playsinline
+          webkit-playsinline
+          preload="auto"
         ></video>
       </div>
       
@@ -180,6 +182,92 @@ onUnmounted(() => {
 
 .animate-float {
   animation: float 3s ease-in-out infinite;
+}
+
+/* Edge Mobile specific fixes for video background */
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.video-background {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  max-width: none;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  -o-object-fit: cover;
+  transition: opacity 2s ease-in-out;
+  -webkit-transition: opacity 2s ease-in-out;
+  -moz-transition: opacity 2s ease-in-out;
+  -ms-transition: opacity 2s ease-in-out;
+  -o-transition: opacity 2s ease-in-out;
+  /* Hardware acceleration for smoother transitions */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  will-change: opacity;
+}
+
+.video-active {
+  opacity: 0.6;
+  z-index: 1;
+}
+
+.video-inactive {
+  opacity: 0;
+  z-index: 0;
+}
+
+/* Edge Mobile specific video rendering fixes */
+@supports (-ms-ime-align: auto) {
+  .video-background {
+    /* Edge-specific rendering improvements */
+    -ms-interpolation-mode: nearest-neighbor;
+  }
+}
+
+/* Additional fixes for older Edge versions */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .video-background {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: none;
+  }
+}
+
+/* Mobile-specific optimizations */
+@media (max-width: 768px) {
+  .video-background {
+    /* Ensure proper rendering on mobile Edge */
+    -webkit-transform: translate(-50%, -50%) translateZ(0);
+    transform: translate(-50%, -50%) translateZ(0);
+  }
+  
+  .video-container {
+    /* Prevent overflow issues on mobile Edge */
+    -webkit-overflow-scrolling: touch;
+  }
 }
 </style>
 
