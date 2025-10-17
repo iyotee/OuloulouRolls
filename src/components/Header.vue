@@ -23,7 +23,7 @@
         <!-- Mobile Menu Button -->
         <button 
           @click="toggleMenu"
-          class="md:hidden flex flex-col items-center justify-center w-12 h-12 sm:w-14 sm:h-14 space-y-1.5 bg-white border-2 border-gray-300 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 flex-shrink-0 mx-2"
+          class="md:hidden flex flex-col items-center justify-center w-12 h-12 sm:w-14 sm:h-14 space-y-1.5 bg-white border-2 border-gray-300 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 flex-shrink-0 mx-2 relative z-50"
           :class="{ 'space-y-0': isMenuOpen }"
           aria-label="Menu de navigation"
         >

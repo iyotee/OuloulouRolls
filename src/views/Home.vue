@@ -17,6 +17,8 @@
           webkit-playsinline
           preload="auto"
           @loadeddata="setVideoSpeed"
+          @error="handleVideoError"
+          @loadstart="handleVideoLoad"
         ></video>
       </div>
       
@@ -199,7 +201,7 @@
     </section>
 
     <!-- Google Reviews Section -->
-    <section class="py-20 bg-gray-50">
+    <section class="py-20 bg-white">
       <div class="container mx-auto px-4 lg:px-8">
         <div class="text-center mb-16" data-aos="fade-up">
           <p class="text-accent-indigo font-semibold mb-4">Témoignages</p>
@@ -239,30 +241,30 @@
           </div>
         </div>
         
-        <!-- Call to Action -->
-        <div class="text-center mt-16" data-aos="fade-up" data-aos-delay="400">
-          <p class="text-lg text-gray-600 mb-6">
-            Vous aussi, partagez votre expérience avec nous !
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
-              href="https://www.google.com/search?num=10&sca_esv=602bc0460517bd79&biw=1271&bih=1334&sxsrf=AE3TifNvpzIJRQ84MAP8aA1sBsf_fqliVw:1760723562281&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-E5j_cD7E7nYIL5oVuXxlXk9TR3qOyrTs-lcEdBp_fBYmqCeUZQ8r8N6thruYSyUB5flYnf9WR6plNsbNMmKbiWfjen1c&q=Ouloulou+ice+rolls+Avis&sa=X&ved=2ahUKEwimyuiz5quQAxVn-gIHHf1uClEQ0bkNegQIIBAE"
-              target="_blank"
-              class="inline-flex items-center px-6 py-3 bg-accent-indigo text-white rounded-full font-semibold hover:bg-purple-600 transition-all duration-200"
-            >
-              <i class="fab fa-google mr-2"></i>
-              Voir tous nos avis Google
-            </a>
-            <a 
-              href="https://maps.app.goo.gl/A7yBE7Et839Pj1p59" 
-              target="_blank"
-              class="inline-flex items-center px-6 py-3 bg-transparent text-accent-indigo border-2 border-accent-indigo rounded-full font-semibold hover:bg-accent-indigo hover:text-white transition-all duration-200"
-            >
-              <i class="fas fa-star mr-2"></i>
-              Laisser un avis
-            </a>
-          </div>
+      <!-- Call to Action -->
+      <div class="text-center mt-8" data-aos="fade-up" data-aos-delay="400">
+        <p class="text-lg text-gray-600 mb-4">
+          Vous aussi, partagez votre expérience avec nous !
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="https://www.google.com/search?num=10&sca_esv=602bc0460517bd79&biw=1271&bih=1334&sxsrf=AE3TifNvpzIJRQ84MAP8aA1sBsf_fqliVw:1760723562281&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-E5j_cD7E7nYIL5oVuXxlXk9TR3qOyrTs-lcEdBp_fBYmqCeUZQ8r8N6thruYSyUB5flYnf9WR6plNsbNMmKbiWfjen1c&q=Ouloulou+ice+rolls+Avis&sa=X&ved=2ahUKEwimyuiz5quQAxVn-gIHHf1uClEQ0bkNegQIIBAE" 
+            target="_blank"
+            class="inline-flex items-center px-6 py-3 bg-accent-indigo text-white rounded-full font-semibold hover:bg-purple-600 transition-all duration-200"
+          >
+            <i class="fab fa-google mr-2 text-white"></i>
+            Voir tous nos avis Google
+          </a>
+          <a 
+            href="https://maps.app.goo.gl/A7yBE7Et839Pj1p59" 
+            target="_blank"
+            class="inline-flex items-center px-6 py-3 bg-transparent text-black border-2 border-black rounded-full font-semibold hover:bg-black hover:text-white transition-all duration-200"
+          >
+            <i class="fas fa-star mr-2 text-black"></i>
+            Laisser un avis
+          </a>
         </div>
+      </div>
       </div>
     </section>
 
@@ -314,6 +316,24 @@ const handleScroll = () => {
 const setVideoSpeed = (event) => {
   const video = event.target
   video.playbackRate = 0.8
+}
+
+const handleVideoError = (event) => {
+  console.warn('Video failed to load:', event.target.src)
+  // Try to load the next video if current one fails
+  const currentIndex = backgroundVideos.value.findIndex(v => v.src === event.target.src)
+  if (currentIndex !== -1 && currentIndex < backgroundVideos.value.length - 1) {
+    backgroundVideos.value[currentIndex + 1].active = true
+    backgroundVideos.value[currentIndex].active = false
+  }
+}
+
+const handleVideoLoad = (event) => {
+  const video = event.target
+  video.muted = true
+  video.playsInline = true
+  // Ensure video plays
+  video.play().catch(e => console.warn('Video autoplay failed:', e))
 }
 
 const startVideoTransitions = () => {
@@ -375,6 +395,7 @@ onUnmounted(() => {
   backface-visibility: hidden;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
+  background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
 }
 
 .video-background {

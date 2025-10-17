@@ -104,11 +104,7 @@
         <!-- Anniversaires -->
         <div id="anniversaires" class="mb-20 scroll-mt-24">
           <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
-            <div class="rounded-2xl overflow-hidden shadow-2xl max-w-md mx-auto" data-aos="fade-right">
-              <img src="/images/anniversaire.png" alt="Anniversaire" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
-            </div>
-            
-            <div class="space-y-6 text-gray-700 text-lg" data-aos="fade-left">
+            <div class="space-y-6 text-gray-700 text-lg" data-aos="fade-right">
               <h2 class="text-3xl lg:text-4xl font-windsong text-center text-black">Anniversaires</h2>
               <p>
                 Pour célébrer un <strong>anniversaire</strong> en beauté, nos glaces roulées artisanales 
@@ -141,6 +137,10 @@
                   </li>
                 </ul>
               </div>
+            </div>
+            
+            <div class="rounded-2xl overflow-hidden shadow-2xl max-w-md mx-auto" data-aos="fade-left">
+              <img src="/images/anniversaire.png" alt="Anniversaire" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
             </div>
           </div>
         </div>
