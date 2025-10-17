@@ -16,9 +16,12 @@
           playsinline
           webkit-playsinline
           preload="auto"
+          controls="false"
+          disablepictureinpicture
           @loadeddata="setVideoSpeed"
           @error="handleVideoError"
           @loadstart="handleVideoLoad"
+          @canplay="forcePlay"
         ></video>
       </div>
       
@@ -342,6 +345,22 @@ const handleVideoLoad = (event) => {
   video.play().catch(e => console.warn('Video autoplay failed:', e))
 }
 
+const forcePlay = (event) => {
+  const video = event.target
+  // Force play on iOS devices
+  if (video.paused) {
+    video.muted = true
+    video.playsInline = true
+    video.play().catch(e => {
+      console.warn('Force play failed:', e)
+      // Try again after a short delay
+      setTimeout(() => {
+        video.play().catch(e2 => console.warn('Retry play failed:', e2))
+      }, 100)
+    })
+  }
+}
+
 const startVideoTransitions = () => {
   let currentIndex = 0
   
@@ -366,6 +385,18 @@ onMounted(() => {
   window.addEventListener('scroll', handleScroll)
   startVideoTransitions()
   startCarousel()
+  
+  // Force video play on iOS after component mount
+  setTimeout(() => {
+    backgroundVideos.value.forEach((video, index) => {
+      const videoElement = document.querySelector(`video[src="${video.src}"]`)
+      if (videoElement && videoElement.paused) {
+        videoElement.muted = true
+        videoElement.playsInline = true
+        videoElement.play().catch(e => console.warn('iOS force play failed:', e))
+      }
+    })
+  }, 500)
 })
 
 onUnmounted(() => {
@@ -402,6 +433,33 @@ onUnmounted(() => {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
   background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+}
+
+/* iOS specific fixes */
+@supports (-webkit-touch-callout: none) {
+  .video-background {
+    -webkit-playsinline: true;
+    -webkit-media-controls: none;
+    -webkit-media-controls-overlay-play-button: none;
+    -webkit-media-controls-play-button: none;
+    -webkit-media-controls-start-playback-button: none;
+  }
+  
+  .video-background::-webkit-media-controls {
+    display: none !important;
+  }
+  
+  .video-background::-webkit-media-controls-panel {
+    display: none !important;
+  }
+  
+  .video-background::-webkit-media-controls-play-button {
+    display: none !important;
+  }
+  
+  .video-background::-webkit-media-controls-start-playback-button {
+    display: none !important;
+  }
 }
 
 .video-background {
