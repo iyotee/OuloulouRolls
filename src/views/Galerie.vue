@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen pt-16 sm:pt-20">
+  <div class="min-h-screen pt-24 sm:pt-28 lg:pt-32">
     <!-- Page Header -->
     <section class="py-8 sm:py-12 lg:py-16 bg-transparent text-gray-800">
       <div class="container mx-auto px-6 sm:px-8 lg:px-12 text-center">
@@ -290,15 +290,46 @@ const galleryItems = [
 </script>
 
 <style scoped>
-/* Empêcher le scroll horizontal sur tous les écrans */
-html, body {
-  overflow-x: hidden !important;
-  max-width: 100vw !important;
+/* Empêcher le scroll vertical sur les titres */
+h1.font-windsong {
+  overflow: hidden !important;
+  max-height: none !important;
+  line-height: 1.2 !important;
 }
 
-/* S'assurer que le conteneur principal ne dépasse jamais */
+/* S'assurer qu'il n'y a pas de scroll sur le conteneur */
 .container {
+  overflow: visible !important;
+}
+
+/* Empêcher tout scroll vertical sur les éléments de texte */
+.text-center {
+  overflow: visible !important;
+}
+</style>
+
+<style scoped>
+/* Empêcher le scroll vertical sur les titres */
+h1.font-windsong {
+  overflow: visible !important;
+  max-height: none !important;
+  line-height: 1.2 !important;
+  height: auto !important;
+}
+
+/* S'assurer qu'il n'y a pas de scroll sur le conteneur */
+.container {
+  overflow: visible !important;
   max-width: 100% !important;
+}
+
+/* Empêcher tout scroll vertical sur les éléments de texte */
+.text-center {
+  overflow: visible !important;
+}
+
+/* Empêcher le scroll horizontal seulement */
+html, body {
   overflow-x: hidden !important;
 }
 

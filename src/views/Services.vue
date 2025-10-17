@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen pt-16 sm:pt-20">
+  <div class="min-h-screen pt-24 sm:pt-28 lg:pt-32">
     <!-- Page Header -->
     <section class="py-8 sm:py-12 lg:py-16 bg-transparent text-gray-800">
       <div class="container mx-auto px-6 sm:px-8 lg:px-12 text-center">

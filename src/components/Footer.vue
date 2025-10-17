@@ -52,14 +52,14 @@
           <p class="text-gray-600 mb-4">
             Des Ice Rolls préparés sous vos yeux, un spectacle gourmand qui transforme chaque événement en moment inoubliable.
           </p>
-          <div class="flex flex-wrap gap-3">
+          <div class="grid grid-cols-2 gap-3">
             <a 
               v-for="social in socials" 
               :key="social.name"
               :href="social.url"
               target="_blank"
               rel="noopener"
-              class="flex items-center justify-center gap-2 w-32 px-4 py-2 bg-white border border-gray-200 rounded-lg hover:bg-accent-indigo hover:text-white hover:border-accent-indigo transition-all duration-200 shadow-sm hover:shadow-md"
+              class="flex items-center justify-center gap-2 w-full px-4 py-2 bg-white border border-gray-200 rounded-lg hover:bg-accent-indigo hover:text-white hover:border-accent-indigo transition-all duration-200 shadow-sm hover:shadow-md"
             >
               <i :class="social.icon"></i>
               <span class="text-sm font-medium">{{ social.name }}</span>
