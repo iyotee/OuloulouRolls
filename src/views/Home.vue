@@ -42,10 +42,11 @@
       <div class="container mx-auto px-3 sm:px-4 lg:px-8">
         <div class="text-center mb-12 sm:mb-16" data-aos="fade-up">
           <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-windsong mb-4 sm:mb-6 text-gray-800">
-            Notre Expertise
-        </h2>
+            Notre Mission
+          </h2>
           <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-2">
-            <strong>Ouloulou Ice Rolls</strong> trouve ses racines dans un road trip en Thaïlande où nous avons découvert les glaces roulées. Fascinés par cette technique, nous avons effectué un stage pratique sur place, apprenant les secrets de fabrication aux côtés d'artisans locaux pour partager cette aventure gustative. Faites vibrer vos invités — demandez votre devis dès aujourd'hui !
+            Des Ice Rolls préparés sous vos yeux, un spectacle gourmand qui transforme chaque événement en moment inoubliable.<br>
+            Faites vibrer vos invités — demandez votre devis dès aujourd'hui !
           </p>
           </div>
           
@@ -211,17 +212,19 @@
           </div>
           
         <!-- Trustindex Widget -->
-        <div class="max-w-6xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-          <iframe 
-            src="https://cdn.trustindex.io/amp-widget.html#339921256c483916a14616b02c8"
-            sandbox="allow-scripts allow-same-origin"
-            width="100%" 
-            height="270"
-            frameborder="0"
-            scrolling="no"
-            style="border: none; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);"
-            title="Avis Google Ouloulou Ice Rolls"
-          ></iframe>
+        <div class="max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+          <div class="relative w-full" style="padding-bottom: 56.25%; height: 0;">
+            <iframe 
+              src="https://cdn.trustindex.io/amp-widget.html#d1a58ce561b7397aef569e8c75d"
+              sandbox="allow-scripts allow-same-origin"
+              width="100%" 
+              height="100%"
+              frameborder="0"
+              scrolling="no"
+              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; background-color: white;"
+              title="Avis Google Ouloulou Ice Rolls"
+            ></iframe>
+          </div>
         </div>
         
         <!-- Call to Action -->
