@@ -32,7 +32,7 @@
         <!-- Mobile Menu Button -->
         <button 
           @click="toggleMenu"
-          class="md:hidden flex flex-col items-center justify-center w-11 h-11 sm:w-12 sm:h-12 space-y-1.5 bg-white border border-gray-200 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 flex-shrink-0"
+          class="md:hidden flex flex-col items-center justify-center w-12 h-12 sm:w-14 sm:h-14 space-y-1.5 bg-white border-2 border-gray-300 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 flex-shrink-0 mx-2"
           :class="{ 'space-y-0': isMenuOpen }"
           aria-label="Menu de navigation"
         >
@@ -121,17 +121,29 @@ const closeMenu = () => {
     padding-right: 0.75rem;
   }
   
-  /* Assurer que le bouton hamburger reste visible */
+  /* Assurer que le bouton hamburger reste visible et centré */
   button[aria-label="Menu de navigation"] {
-    min-width: 44px;
-    min-height: 44px;
+    min-width: 48px;
+    min-height: 48px;
     position: relative;
-    z-index: 10;
+    z-index: 20;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
   }
   
   /* Améliorer l'espacement sur les écrans très étroits */
   .flex.items-center.justify-between {
-    gap: 0.5rem;
+    gap: 0.25rem;
+    align-items: center;
+  }
+  
+  /* S'assurer que le logo ne pousse pas le bouton hors de l'écran */
+  .flex.items-center.justify-between > a:first-child {
+    flex-shrink: 1;
+    max-width: calc(100% - 60px);
   }
 }
 
@@ -144,7 +156,28 @@ const closeMenu = () => {
   
   /* Réduire encore plus l'espacement si nécessaire */
   .flex.items-center.justify-between {
-    gap: 0.25rem;
+    gap: 0.125rem;
+    align-items: center;
+  }
+  
+  /* Bouton hamburger encore plus visible sur très petits écrans */
+  button[aria-label="Menu de navigation"] {
+    min-width: 44px;
+    min-height: 44px;
+    z-index: 25;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+    border-width: 2px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Logo encore plus petit sur très petits écrans */
+  .flex.items-center.justify-between > a:first-child {
+    max-width: calc(100% - 50px);
+  }
+  
+  .flex.items-center.justify-between > a:first-child img {
+    max-height: 2rem;
   }
 }
 
@@ -153,6 +186,26 @@ const closeMenu = () => {
   .md\\:hidden.absolute {
     max-height: calc(100vh - 4rem);
     overflow-y: auto;
+  }
+}
+
+/* Règle générale pour s'assurer que le bouton hamburger reste toujours visible */
+@media screen and (max-width: 768px) {
+  button[aria-label="Menu de navigation"] {
+    position: relative;
+    z-index: 30;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    min-width: 44px;
+    min-height: 44px;
+  }
+  
+  /* S'assurer que le conteneur flex ne compresse pas le bouton */
+  .flex.items-center.justify-between {
+    align-items: center;
+    min-height: 4rem;
   }
 }
 </style>
