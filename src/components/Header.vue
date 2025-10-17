@@ -82,7 +82,7 @@ const isMenuOpen = ref(false)
 const navLinks = [
   { name: 'Accueil', path: '/' },
   { name: 'Nos Services', path: '/services' },
-  { name: 'Nous ont fait confiance', path: '/confiance' },
+  { name: 'Nous Ont Fait Confiance', path: '/confiance' },
   { name: 'Galerie', path: '/galerie' },
   { name: 'Contact', path: '/contact' }
 ]

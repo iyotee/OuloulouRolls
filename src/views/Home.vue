@@ -43,7 +43,7 @@
     <section class="py-12 sm:py-16 md:py-20 bg-gray-50">
       <div class="container mx-auto px-3 sm:px-4 lg:px-8">
         <div class="text-center mb-12 sm:mb-16" data-aos="fade-up">
-          <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-windsong mb-4 sm:mb-6 text-gray-800">
+          <h2 class="text-4xl sm:text-4xl md:text-5xl lg:text-5xl font-windsong mb-4 sm:mb-6 text-gray-800">
             Notre Mission
           </h2>
           <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-2">
@@ -129,13 +129,14 @@
         
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <!-- Création 1 -->
-          <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
-            <div class="text-center mb-6">
-              <img src="/images/icecream_pistache .png" alt="La Pistacchio" class="w-88 h-88 object-contain mx-auto mb-4">
+          <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 flex flex-col" data-aos="fade-up" data-aos-delay="100">
+            <div class="text-center mb-6 flex-shrink-0">
+              <img src="/images/icecream_pistache .png" alt="La Pistacchio" class="w-80 h-80 object-contain mx-auto mb-4">
             </div>
-            <h3 class="text-2xl font-heading font-bold text-gray-800 mb-4">La Pistacchio</h3>
-            <p class="text-gray-600 mb-6">L'alliance sucrée-salée parfaite : la douceur de la pistache est sublimée par des notes gourmandes. Une création authentique à la finale croquante et mémorable.</p>
-            <ul class="space-y-2">
+            <div class="flex-grow flex flex-col">
+              <h3 class="text-2xl font-heading font-bold text-gray-800 mb-4">La Pistacchio</h3>
+              <p class="text-gray-600 mb-6 flex-grow">L'alliance sucrée-salée parfaite : la douceur de la pistache est sublimée par des notes gourmandes. Une création authentique à la finale croquante et mémorable.</p>
+              <ul class="space-y-2">
               <li class="flex items-center text-gray-700">
                 <i class="fas fa-check text-accent-indigo mr-3"></i>
                 Pistache Authentique
@@ -149,16 +150,18 @@
                 Éclats Croquants
               </li>
             </ul>
+            </div>
           </div>
 
           <!-- Création 2 -->
-          <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
-            <div class="text-center mb-6">
+          <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 flex flex-col" data-aos="fade-up" data-aos-delay="200">
+            <div class="text-center mb-6 flex-shrink-0">
               <img src="/images/icecream_strawberry.png" alt="La Fraise Citron Limette" class="w-80 h-80 object-contain mx-auto mb-4">
             </div>
-            <h3 class="text-2xl font-heading font-bold text-gray-800 mb-4">La Fraise Citron Limette</h3>
-            <p class="text-gray-600 mb-6">La fraîcheur éclatante des fraises de saison, mariée aux notes acidulées du citron et de la limette. Une explosion de saveurs fruitées et rafraîchissantes qui éveille les papilles.</p>
-            <ul class="space-y-2">
+            <div class="flex-grow flex flex-col">
+              <h3 class="text-2xl font-heading font-bold text-gray-800 mb-4">La Fraise Citron Limette</h3>
+              <p class="text-gray-600 mb-6 flex-grow">La fraîcheur éclatante des fraises de saison, mariée aux notes acidulées du citron et de la limette. Une explosion de saveurs fruitées et rafraîchissantes qui éveille les papilles.</p>
+              <ul class="space-y-2">
               <li class="flex items-center text-gray-700">
                 <i class="fas fa-check text-accent-indigo mr-3"></i>
                 Fraises Fraîches
@@ -172,16 +175,18 @@
                 Limette Rafraîchissante
               </li>
             </ul>
+            </div>
           </div>
           
           <!-- Création 3 -->
-          <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
-            <div class="text-center mb-6">
+          <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 flex flex-col" data-aos="fade-up" data-aos-delay="300">
+            <div class="text-center mb-6 flex-shrink-0">
               <img src="/images/icecream_tarte_pommes.png" alt="La Tarte aux Pommes" class="w-80 h-80 object-contain mx-auto mb-4">
             </div>
-            <h3 class="text-2xl font-heading font-bold text-gray-800 mb-4">La Tarte aux Pommes</h3>
-            <p class="text-gray-600 mb-6">La douceur des pommes caramélisées, mariée aux notes chaudes de la cannelle et aux morceaux de pommes croquantes. Une création réconfortante qui évoque les saveurs d'automne et les desserts de grand-mère.</p>
-            <ul class="space-y-2">
+            <div class="flex-grow flex flex-col">
+              <h3 class="text-2xl font-heading font-bold text-gray-800 mb-4">La Tarte aux Pommes</h3>
+              <p class="text-gray-600 mb-6 flex-grow">La douceur des pommes caramélisées, mariée aux notes chaudes de la cannelle et aux morceaux de pommes croquantes. Une création réconfortante qui évoque les saveurs d'automne et les desserts de grand-mère.</p>
+              <ul class="space-y-2">
               <li class="flex items-center text-gray-700">
                 <i class="fas fa-check text-accent-indigo mr-3"></i>
                 Pommes Caramélisées
@@ -195,6 +200,7 @@
                 Morceaux Croquants
               </li>
             </ul>
+            </div>
           </div>
         </div>
       </div>
