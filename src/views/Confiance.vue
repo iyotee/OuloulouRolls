@@ -3,8 +3,8 @@
     <!-- Page Header -->
     <section class="py-16 bg-transparent text-gray-800">
       <div class="container mx-auto px-4 lg:px-8 text-center">
-        <h1 class="text-5xl lg:text-7xl font-windsong mb-6">Nous ont fait confiance</h1>
-        <p class="text-xl lg:text-2xl max-w-2xl mx-auto">
+        <h1 class="text-5xl lg:text-7xl font-windsong mb-6" data-aos="fade-up">Nous ont fait confiance</h1>
+        <p class="text-xl lg:text-2xl max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
           pour leurs moments spéciaux
         </p>
       </div>
@@ -13,83 +13,19 @@
     <!-- Trust Section -->
     <section class="py-20">
       <div class="container mx-auto px-4 lg:px-8">
-        <!-- Entreprises -->
-        <div class="mb-16">
-          <h2 class="text-3xl lg:text-4xl font-heading text-center mb-12 text-gray-800">Entreprises</h2>
-          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 lg:gap-8">
-            <div 
-              v-for="company in entreprises" 
-              :key="company.name"
-              class="text-center group hover:-translate-y-2 transition-all duration-300"
-            >
-              <div class="w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 mx-auto mb-4 rounded-xl shadow-lg group-hover:shadow-xl overflow-hidden">
-                <img v-if="company.icon.startsWith('/')" :src="company.icon" :alt="company.name" class="w-full h-full object-contain p-2 bg-white">
-                <i v-else :class="company.icon" class="text-2xl sm:text-3xl lg:text-4xl text-accent-indigo"></i>
-              </div>
-              <h3 class="font-semibold text-gray-800 mb-2 text-sm sm:text-base">{{ company.name }}</h3>
-              <p class="text-xs sm:text-sm text-gray-600">{{ company.description }}</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Festivals -->
-        <div class="mb-16">
-          <h2 class="text-3xl lg:text-4xl font-heading text-center mb-12 text-gray-800">Festivals</h2>
-          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 lg:gap-8">
-            <div 
-              v-for="festival in festivals" 
-              :key="festival.name"
-              class="text-center group hover:-translate-y-2 transition-all duration-300"
-            >
-              <div class="w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 mx-auto mb-4 rounded-xl shadow-lg group-hover:shadow-xl overflow-hidden">
-                <img v-if="festival.icon.startsWith('/')" :src="festival.icon" :alt="festival.name" class="w-full h-full object-contain p-2 bg-white">
-                <i v-else :class="festival.icon" class="text-2xl sm:text-3xl lg:text-4xl text-purple-600"></i>
-              </div>
-              <h3 class="font-semibold text-gray-800 mb-2 text-sm sm:text-base">{{ festival.name }}</h3>
-              <p class="text-xs sm:text-sm text-gray-600">{{ festival.description }}</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Événements Sportifs -->
-        <div class="mb-16">
-          <h2 class="text-3xl lg:text-4xl font-heading text-center mb-12 text-gray-800">Événements Sportifs</h2>
-          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 lg:gap-8">
-            <div 
-              v-for="sport in sports" 
-              :key="sport.name"
-              class="text-center group hover:-translate-y-2 transition-all duration-300"
-            >
-              <div class="w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 mx-auto mb-4 rounded-xl shadow-lg group-hover:shadow-xl overflow-hidden">
-                <img v-if="sport.icon.startsWith('/')" :src="sport.icon" :alt="sport.name" class="w-full h-full object-contain p-2 bg-white">
-                <i v-else :class="sport.icon" class="text-2xl sm:text-3xl lg:text-4xl text-blue-600"></i>
-              </div>
-              <h3 class="font-semibold text-gray-800 mb-2 text-sm sm:text-base">{{ sport.name }}</h3>
-              <p class="text-xs sm:text-sm text-gray-600">{{ sport.description }}</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Événements Privés -->
-        <div>
-          <h2 class="text-3xl lg:text-4xl font-heading text-center mb-12 text-gray-800">Événements Privés</h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <router-link 
-              v-for="prive in prives" 
-              :key="prive.name"
-              :to="prive.link"
-              class="text-center p-8 bg-gradient-to-br from-pink-50 to-purple-50 rounded-2xl group hover:-translate-y-2 transition-all duration-300 cursor-pointer"
-            >
-              <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-pink-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl">
-                <i :class="prive.icon" class="text-3xl text-white"></i>
-              </div>
-              <h3 class="text-2xl font-heading mb-4 text-gray-800">{{ prive.name }}</h3>
-              <p class="text-gray-600 mb-4">{{ prive.description }}</p>
-              <span class="inline-flex items-center gap-2 text-sm font-semibold" style="color: #5AAECC;">
-                Demander un devis
-                <i class="fas fa-arrow-right"></i>
-              </span>
-            </router-link>
+        <!-- Partenaires -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 lg:gap-8">
+          <div 
+            v-for="(partner, index) in partenaires" 
+            :key="partner.name"
+            class="text-center group hover:-translate-y-2 transition-all duration-300"
+            :data-aos="'fade-up'"
+            :data-aos-delay="(index % 6) * 100"
+          >
+            <img v-if="partner.icon.startsWith('/')" :src="partner.icon" :alt="partner.name" class="w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 object-contain mx-auto mb-4 transition-transform duration-300 group-hover:scale-110">
+            <i v-else :class="partner.icon" class="text-5xl sm:text-6xl lg:text-7xl text-accent-indigo mx-auto mb-4 transition-transform duration-300 group-hover:scale-110"></i>
+            <h3 class="font-semibold text-gray-800 mb-2 text-sm sm:text-base">{{ partner.name }}</h3>
+            <p class="text-xs sm:text-sm text-gray-600">{{ partner.description }}</p>
           </div>
         </div>
       </div>
@@ -128,46 +64,28 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
 })
-const entreprises = [
-  { name: 'UBS', icon: '/images/logos/ubs.png', description: 'Événements bancaires' },
-  { name: 'Migros Vaud', icon: '/images/logos/migros-logo.png', description: 'Événements corporatifs' },
-  { name: 'Rolex', icon: '/images/logos/Rolex.png', description: 'Événements de luxe' },
-  { name: 'Swisscom', icon: '/images/logos/swisscomLogo.png', description: 'Événements tech' },
-  { name: 'Nestlé', icon: '/images/logos/Nestle.png', description: 'Événements alimentaires' },
-  { name: 'Novartis', icon: '/images/logos/novartis.png', description: 'Événements pharma' },
-  { name: 'Graine de Foot', icon: '/images/logos/graineFoot.png', description: 'Événements sportifs' },
-  { name: 'Orllati', icon: '/images/logos/Orllati.png', description: 'Événements corporatifs' },
-  { name: 'Enzo Net', icon: '/images/logos/EnzoNet.png', description: 'Événements tech' },
-  { name: 'Ville de Renens', icon: '/images/logos/villeDeRenensl.png', description: 'Événements municipaux' },
-  { name: 'Le Châtelard', icon: '/images/logos/chatelard-logo.png', description: 'Événements éducatifs' },
-  { name: 'SCHR', icon: '/images/logos/SCHR.png', description: 'Événements corporatifs' },
-  { name: 'Polyval', icon: '/images/logos/polyval.png', description: 'Événements corporatifs' }
-]
-
-const festivals = [
-  { name: 'Zumbucks', icon: '/images/logos/zumbruck.png', description: 'Festival de musique' },
-  { name: 'Lake Parade', icon: '/images/logos/lake.png', description: 'Festival électronique' },
+const partenaires = [
   { name: 'Arcana Festival', icon: '/images/logos/arcana.png', description: 'Festival mystique' },
-  { name: 'Montreux Jazz', icon: '/images/logos/MontreuxJazzFestival.png', description: 'Festival de jazz' },
-  { name: 'Paléo Festival', icon: '/images/logos/paleo.png', description: 'Festival de musique' },
-  { name: 'Kiyo Festival', icon: '/images/logos/kiyo.png', description: 'Festival culturel' },
-  { name: 'Shonen Pop', icon: '/images/logos/shonen.png', description: 'Festival manga' },
-  { name: 'Dragon Ball Day', icon: '/images/logos/DBD.png', description: 'Festival anime' },
+  { name: 'Athletissima', icon: '/images/logos/athletissima.png', description: 'Meeting d\'athlétisme' },
   { name: 'Braderie Horlofolies', icon: '/images/logos/Horlofolies.png', description: 'Festival horloger' },
-  { name: 'Festival de la Cité', icon: '/images/logos/cite.png', description: 'Festival culturel' },
-  { name: 'Festival du Film', icon: '/images/logos/Zurich.png', description: 'Festival cinéma' },
-  { name: 'Festival de Danse', icon: '/images/logos/danse.png', description: 'Festival danse' },
-  { name: 'Festival de Rue', icon: '/images/logos/rue.png', description: 'Festival urbain' }
-]
-
-const sports = [
+  { name: 'Dragon Ball Day', icon: '/images/logos/DBD.png', description: 'Festival anime' },
+  { name: 'Enzo Net', icon: '/images/logos/EnzoNet.png', description: 'Événements tech' },
+  { name: 'Graine de Foot', icon: '/images/logos/graineFoot.png', description: 'Événements sportifs' },
+  { name: 'Kiyo Festival', icon: '/images/logos/kiyo.png', description: 'Festival culturel' },
+  { name: 'Lake Parade', icon: '/images/logos/lake.png', description: 'Festival électronique' },
   { name: 'Lausanne Sport', icon: '/images/logos/ls.png', description: 'Club de football' },
-  { name: 'Athletissima', icon: '/images/logos/athletissima.png', description: 'Meeting d\'athlétisme' }
-]
-
-const prives = [
-  { name: 'Anniversaires', icon: 'fas fa-birthday-cake', description: 'Célébrations privées', link: '/contact?type=anniversaire' },
-  { name: 'Mariages', icon: 'fas fa-heart', description: 'Événements romantiques', link: '/contact?type=mariage' }
+  { name: 'Le Châtelard International School', icon: '/images/logos/chatelard-logo.png', description: 'Événements éducatifs' },
+  { name: 'Migros Vaud', icon: '/images/logos/migros-logo.png', description: 'Événements corporatifs' },
+  { name: 'Montreux Jazz Festival', icon: '/images/logos/MontreuxJazzFestival.png', description: 'Festival de jazz' },
+  { name: 'Orllati', icon: '/images/logos/Orllati.png', description: 'Événements corporatifs' },
+  { name: 'Paléo Festival', icon: '/images/logos/paleo.png', description: 'Festival de musique' },
+  { name: 'Polyval', icon: '/images/logos/polyval.png', description: 'Événements corporatifs' },
+  { name: 'Rolex', icon: '/images/logos/Rolex.png', description: 'Événements de luxe' },
+  { name: 'SCHR', icon: '/images/logos/SCHR.png', description: 'Événements corporatifs' },
+  { name: 'Shonen Pop', icon: '/images/logos/shonen.png', description: 'Festival manga' },
+  { name: 'UBS', icon: '/images/logos/ubs.png', description: 'Événements bancaires' },
+  { name: 'Ville de Renens', icon: '/images/logos/villeDeRenensl.png', description: 'Événements municipaux' },
+  { name: 'Zumbucks', icon: '/images/logos/zumbruck.png', description: 'Festival de musique' }
 ]
 </script>
 

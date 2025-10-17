@@ -3,8 +3,8 @@
     <!-- Page Header -->
     <section class="py-16 bg-transparent text-gray-800">
       <div class="container mx-auto px-4 lg:px-8 text-center">
-        <h1 class="text-5xl lg:text-7xl font-windsong mb-6">Nos Services</h1>
-        <p class="text-xl lg:text-2xl max-w-2xl mx-auto">
+        <h1 class="text-5xl lg:text-7xl font-windsong mb-6" data-aos="fade-up">Nos Services</h1>
+        <p class="text-xl lg:text-2xl max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
           Découvrez tous nos services de glaces roulées artisanales pour vos événements
         </p>
       </div>
@@ -16,7 +16,7 @@
         <!-- Événements Privés -->
         <div id="evenements-prives" class="mb-20 scroll-mt-24">
           <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
-            <div class="space-y-6 text-gray-700 text-lg">
+            <div class="space-y-6 text-gray-700 text-lg" data-aos="fade-right">
               <h2 class="text-3xl lg:text-4xl font-windsong text-center text-black">Événements Privés</h2>
               <p>
                 Que ce soit pour un <strong>anniversaire</strong>, une <strong>fête de famille</strong>, 
@@ -51,7 +51,7 @@
               </div>
             </div>
             
-            <div class="rounded-2xl overflow-hidden shadow-2xl max-w-md mx-auto">
+            <div class="rounded-2xl overflow-hidden shadow-2xl max-w-md mx-auto" data-aos="fade-left">
               <img src="/images/logos/private_event.png" alt="Événement privé" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
             </div>
           </div>
@@ -60,11 +60,11 @@
         <!-- Anniversaires -->
         <div id="anniversaires" class="mb-20 scroll-mt-24">
           <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
-            <div class="rounded-2xl overflow-hidden shadow-2xl max-w-md mx-auto">
+            <div class="rounded-2xl overflow-hidden shadow-2xl max-w-md mx-auto" data-aos="fade-right">
               <img src="/images/anniversaire.png" alt="Anniversaire" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
             </div>
             
-            <div class="space-y-6 text-gray-700 text-lg">
+            <div class="space-y-6 text-gray-700 text-lg" data-aos="fade-left">
               <h2 class="text-3xl lg:text-4xl font-windsong text-center text-black">Anniversaires</h2>
               <p>
                 Pour célébrer un <strong>anniversaire</strong> en beauté, nos glaces roulées artisanales 
@@ -104,11 +104,11 @@
         <!-- Mariages -->
         <div id="mariages" class="mb-20 scroll-mt-24">
           <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
-            <div class="rounded-2xl overflow-hidden shadow-2xl max-w-md mx-auto order-2 lg:order-1">
+            <div class="rounded-2xl overflow-hidden shadow-2xl max-w-md mx-auto order-2 lg:order-1" data-aos="fade-left">
               <img src="/images/mariage.png" alt="Mariage élégant" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
             </div>
             
-            <div class="space-y-6 text-gray-700 text-lg order-1 lg:order-2">
+            <div class="space-y-6 text-gray-700 text-lg order-1 lg:order-2" data-aos="fade-right">
               <h2 class="text-3xl lg:text-4xl font-windsong text-center text-black">Mariages</h2>
               <p>
                 Pour votre <strong>grand jour</strong>, offrez à vos invités une expérience gustative 

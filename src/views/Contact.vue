@@ -68,8 +68,8 @@
     <!-- Page Header -->
     <section class="py-16 bg-transparent text-gray-800">
       <div class="container mx-auto px-4 lg:px-8 text-center">
-        <h1 class="text-5xl lg:text-7xl font-windsong mb-6">Contactez-nous</h1>
-        <p class="text-xl lg:text-2xl max-w-2xl mx-auto">
+        <h1 class="text-5xl lg:text-7xl font-windsong mb-6" data-aos="fade-up">Contactez-nous</h1>
+        <p class="text-xl lg:text-2xl max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
           Prêt à rendre votre événement unique ? Contactez-nous pour discuter de vos besoins 
           et réserver nos glaces roulées artisanales.
         </p>
@@ -81,7 +81,7 @@
       <div class="container mx-auto px-4 lg:px-8">
         <div class="grid lg:grid-cols-2 gap-12">
           <!-- Contact Form -->
-          <div class="bg-white rounded-2xl shadow-xl p-8">
+          <div class="bg-white rounded-2xl shadow-xl p-8" data-aos="fade-right">
             <h2 class="text-3xl font-heading mb-6 text-gray-800">Demande de devis</h2>
             <p class="text-gray-600 mb-8">Remplissez le formulaire ci-dessous pour obtenir un devis personnalisé.</p>
             
@@ -190,13 +190,13 @@
           </div>
 
           <!-- Contact Info -->
-          <div class="space-y-8">
+          <div class="space-y-8" data-aos="fade-left">
             <div class="bg-gradient-to-r from-gray-100 to-gray-200 rounded-2xl p-8 text-gray-800">
               <h2 class="text-3xl font-heading mb-6 text-black">Nos Coordonnées</h2>
               <p class="text-gray-700 mb-8">N'hésitez pas à nous contacter directement.</p>
               
               <div class="space-y-6">
-                <div class="flex items-center gap-4">
+                <div class="flex items-center gap-4" data-aos="fade-up" data-aos-delay="100">
                   <a href="mailto:info@ouloulouicerolls.ch" class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center hover:bg-gray-400 transition-all duration-200 hover:scale-110">
                     <i class="fas fa-envelope text-xl text-black"></i>
                   </a>
@@ -208,7 +208,7 @@
                   </div>
                 </div>
                 
-                <div class="flex items-center gap-4">
+                <div class="flex items-center gap-4" data-aos="fade-up" data-aos-delay="200">
                   <a href="tel:+41764166916" class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center hover:bg-gray-400 transition-all duration-200 hover:scale-110">
                     <i class="fas fa-phone text-xl text-black"></i>
                   </a>
@@ -220,7 +220,7 @@
                   </div>
                 </div>
                 
-                <div class="flex items-center gap-4">
+                <div class="flex items-center gap-4" data-aos="fade-up" data-aos-delay="300">
                   <a href="https://wa.me/41764166916" target="_blank" class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center hover:bg-gray-400 transition-all duration-200 hover:scale-110">
                     <i class="fab fa-whatsapp text-xl text-black"></i>
                   </a>

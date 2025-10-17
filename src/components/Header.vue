@@ -97,9 +97,9 @@ const isMenuOpen = ref(false)
 
 const navLinks = [
   { name: 'Accueil', path: '/' },
-  { name: 'Galerie', path: '/galerie' },
   { name: 'Nos Services', path: '/services' },
   { name: 'Nous ont fait confiance', path: '/confiance' },
+  { name: 'Galerie', path: '/galerie' },
   { name: 'Contact', path: '/contact' }
 ]
 

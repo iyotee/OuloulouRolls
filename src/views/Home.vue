@@ -36,74 +36,161 @@
       </div>
     </section>
 
-    <!-- Story Section -->
+    <!-- About Section -->
     <section class="py-20 bg-gray-50">
       <div class="container mx-auto px-4 lg:px-8">
-        <h2 class="text-5xl lg:text-7xl font-windsong text-center mb-16 text-gray-800">
-          Notre Histoire
-        </h2>
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2 class="text-4xl lg:text-5xl font-windsong mb-6 text-gray-800">
+            Notre Expertise
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            <strong>Ouloulou Ice Rolls</strong> trouve ses racines dans un road trip en Thaïlande où nous avons découvert les glaces roulées. Fascinés par cette technique, nous avons effectué un stage pratique sur place, apprenant les secrets de fabrication aux côtés d'artisans locaux pour partager cette aventure gustative.
+          </p>
+        </div>
+
+
+        <!-- Expertise Details -->
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div data-aos="fade-right">
+            <h3 class="text-3xl font-heading mb-6 text-gray-800">
+              Pourquoi nous choisir ?
+            </h3>
+            <div class="space-y-4">
+              <div class="flex items-center" data-aos="fade-right" data-aos-delay="100">
+                <i class="fas fa-check-circle text-black text-xl mr-3"></i>
+                <span class="text-gray-700">Ingrédients frais et locaux</span>
+              </div>
+              <div class="flex items-center" data-aos="fade-right" data-aos-delay="200">
+                <i class="fas fa-check-circle text-black text-xl mr-3"></i>
+                <span class="text-gray-700">Animation spectaculaire en direct</span>
+              </div>
+              <div class="flex items-center" data-aos="fade-right" data-aos-delay="300">
+                <i class="fas fa-check-circle text-black text-xl mr-3"></i>
+                <span class="text-gray-700">Service professionnel et fiable</span>
+              </div>
+            </div>
+          </div>
+          <div class="relative" data-aos="fade-left">
+            <!-- Carrousel d'images -->
+            <div class="relative overflow-hidden rounded-2xl shadow-2xl">
+              <div class="flex transition-transform duration-500 ease-in-out" :style="{ transform: `translateX(-${currentImageIndex * 100}%)` }">
+                <div 
+                  v-for="(image, index) in galleryImages" 
+                  :key="index"
+                  class="w-full flex-shrink-0"
+                >
+                  <img :src="image" :alt="`Création ${index + 1}`" class="w-full aspect-[3/4] object-cover">
+                </div>
+              </div>
+              
+              <!-- Indicateurs -->
+              <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                <button 
+                  v-for="(image, index) in galleryImages" 
+                  :key="index"
+                  @click="currentImageIndex = index"
+                  class="w-3 h-3 rounded-full transition-all duration-300"
+                  :class="currentImageIndex === index ? 'bg-white' : 'bg-white/50'"
+                ></button>
+              </div>
+            </div>
+            
+            <div class="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-6">
+              <div class="text-center">
+                <div class="text-3xl font-bold text-accent-indigo mb-2">100+</div>
+                <div class="text-gray-600">Événements réussis</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="text-center mt-16">
+          <router-link to="/contact" class="btn-primary text-lg px-8 py-4">
+            <i class="fas fa-calendar-alt mr-2"></i>
+            Demander un devis gratuit
+          </router-link>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nos Créations Tendance Section -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <p class="text-accent-indigo font-semibold mb-4">Découvrez</p>
+          <h2 class="text-4xl font-heading font-bold text-gray-800 mb-6">Nos Créations Tendance</h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">Nous mettons un point d'honneur à vous offrir des parfums qui surprendront vos convives. Laissez-vous emporter par des notes fruitées, salées ou gourmandes.</p>
+        </div>
         
-        <!-- Première section: Aventure Thaïlandaise -->
-        <div class="grid lg:grid-cols-2 gap-12 items-center mb-20">
-          <div class="space-y-6 text-gray-700 text-lg">
-            <h3 class="text-3xl lg:text-4xl font-windsong text-center text-black">Une Aventure Thaïlandaise Authentique</h3>
-            <p>
-              <strong>Ouloulou Ice Rolls</strong> est né d'un voyage en Thaïlande où j'ai découvert les glaces roulées artisanales. 
-              Fasciné par cette technique unique, j'ai effectué un stage pratique dans les marchés de Bangkok et Chiang Mai 
-              pour apprendre ce savoir-faire authentique transmis de génération en génération.
-            </p>
-            <p>
-              Cette expérience culinaire m'a inspiré à créer <strong>Ouloulou Ice Rolls</strong> en Suisse, combinant la tradition 
-              thaïlandaise avec l'innovation locale pour offrir une expérience gustative inoubliable à nos clients.
-            </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Création 1 -->
+          <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+            <div class="text-center mb-6">
+              <img src="/images/icecream_pistache .png" alt="Émeraude Orientale" class="w-44 h-44 object-contain mx-auto mb-4">
+            </div>
+            <h3 class="text-2xl font-heading font-bold text-gray-800 mb-4">Émeraude Orientale</h3>
+            <p class="text-gray-600 mb-6">L'alliance sucrée-salée parfaite : la douceur florale de l'oranger est bousculée par l'intensité de la pistache. Une création gourmande à la finale croquante et mémorable.</p>
+            <ul class="space-y-2">
+              <li class="flex items-center text-gray-700">
+                <i class="fas fa-check text-accent-indigo mr-3"></i>
+                Fleur d'Oranger
+              </li>
+              <li class="flex items-center text-gray-700">
+                <i class="fas fa-check text-accent-indigo mr-3"></i>
+                Pistache Salée
+              </li>
+              <li class="flex items-center text-gray-700">
+                <i class="fas fa-check text-accent-indigo mr-3"></i>
+                Éclats Croquants
+              </li>
+            </ul>
           </div>
-          
-          <div class="rounded-2xl overflow-hidden shadow-2xl max-w-md mx-auto">
-            <img src="/images/WhatsApp Image 2025-10-14 à 15.48.31_81c51376.jpg" alt="Glaces roulées artisanales" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
-          </div>
-        </div>
 
-        <!-- Deuxième section: Excellence et Qualité Suisse -->
-        <div class="grid lg:grid-cols-2 gap-12 items-center mb-20">
-          <div class="rounded-2xl overflow-hidden shadow-2xl max-w-md mx-auto order-2 lg:order-1">
-            <img src="/images/gallery/WhatsApp Image 2025-10-14 à 15.33.49_f5fa8e06.jpg" alt="Ingrédients frais et locaux" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+          <!-- Création 2 -->
+          <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+            <div class="text-center mb-6">
+              <img src="/images/icecream_strawberry.png" alt="Rouge Passion" class="w-40 h-40 object-contain mx-auto mb-4">
+            </div>
+            <h3 class="text-2xl font-heading font-bold text-gray-800 mb-4">Rouge Passion</h3>
+            <p class="text-gray-600 mb-6">La fraîcheur éclatante des fraises de saison, mariée à la douceur crémeuse de la vanille bourbon. Une explosion de saveurs fruitées qui éveille les papilles avec une finale rafraîchissante.</p>
+            <ul class="space-y-2">
+              <li class="flex items-center text-gray-700">
+                <i class="fas fa-check text-accent-indigo mr-3"></i>
+                Fraises Fraîches
+              </li>
+              <li class="flex items-center text-gray-700">
+                <i class="fas fa-check text-accent-indigo mr-3"></i>
+                Vanille Bourbon
+              </li>
+              <li class="flex items-center text-gray-700">
+                <i class="fas fa-check text-accent-indigo mr-3"></i>
+                Coulis de Fruits
+              </li>
+            </ul>
           </div>
-          
-          <div class="space-y-6 text-gray-700 text-lg order-1 lg:order-2">
-            <h3 class="text-3xl lg:text-4xl font-windsong text-center text-black">Excellence et Qualité Suisse</h3>
-            <p>
-              Chez <strong>Ouloulou Ice Rolls</strong>, nous privilégions les ingrédients locaux suisses pour garantir fraîcheur 
-              et qualité, tout en soutenant l'économie régionale. Fruits de saison, produits laitiers locaux et ingrédients 
-              premium sont sélectionnés avec soin.
-            </p>
-            <p>
-              Nous travaillons également avec des fournisseurs renommés pour assurer variété et traçabilité, créant ainsi 
-              des glaces savoureuses qui respectent les standards suisses les plus exigeants.
-            </p>
-          </div>
-        </div>
 
-        <!-- Troisième section: Street Food & Événements Premium -->
-        <div class="grid lg:grid-cols-2 gap-12 items-center mb-20">
-          <div class="space-y-6 text-gray-700 text-lg">
-            <h3 class="text-3xl lg:text-4xl font-windsong text-center text-black">Street Food & Événements Premium</h3>
-            <p>
-              <strong>Ouloulou Ice Rolls</strong> capture l'énergie authentique de la street food thaïlandaise, créant une 
-              expérience théâtrale vivante et conviviale à chaque service. Cette ambiance spontanée est au cœur de notre passion.
-            </p>
-            <p>
-              Nous nous adaptons également avec élégance pour des événements spéciaux : mariages, anniversaires, lancements 
-              de produits ou célébrations d'entreprise. Nous transformons l'expérience street food en prestation sur mesure 
-              et sophistiquée.
-            </p>
-            <p>
-              Que ce soit pour un cocktail raffiné dans un hôtel 5 étoiles ou un festival, nous apportons notre savoir-faire 
-              unique alliant spectacle culinaire et plaisir gourmand pour des moments mémorables et Instagram-worthy.
-            </p>
-          </div>
-          
-          <div class="rounded-2xl overflow-hidden shadow-2xl max-w-md mx-auto">
-            <img src="/images/WhatsApp Image 2025-10-14 à 15.48.35_0e9164b4.jpg" alt="Événements et street food" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+          <!-- Création 3 -->
+          <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+            <div class="text-center mb-6">
+              <img src="/images/icecream_cookies.png" alt="Choco-Crunch Deluxe" class="w-40 h-40 object-contain mx-auto mb-4">
+            </div>
+            <h3 class="text-2xl font-heading font-bold text-gray-800 mb-4">Choco-Crunch Deluxe</h3>
+            <p class="text-gray-600 mb-6">L'iconique biscuit cacaoté, généreusement concassé dans une onctueuse crème glacée artisanale. Une gourmandise régressive et incontournable, pour un plaisir croquant et immédiat.</p>
+            <ul class="space-y-2">
+              <li class="flex items-center text-gray-700">
+                <i class="fas fa-check text-accent-indigo mr-3"></i>
+                Cookies Chocolat
+              </li>
+              <li class="flex items-center text-gray-700">
+                <i class="fas fa-check text-accent-indigo mr-3"></i>
+                Chocolat Noir
+              </li>
+              <li class="flex items-center text-gray-700">
+                <i class="fas fa-check text-accent-indigo mr-3"></i>
+                Base Coco
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -125,15 +212,23 @@ import { ref, onMounted, onUnmounted } from 'vue'
 
 const showScrollButton = ref(false)
 
+// Gallery carousel
+const galleryImages = ref([
+  '/images/gallery/WhatsApp Image 2025-10-14 à 15.48.31_a659574e.jpg',
+  '/images/gallery/WhatsApp Image 2025-10-14 à 15.49.29_2e47b546.jpg',
+  '/images/gallery/WhatsApp Image 2025-10-14 à 15.48.31_81c51376.jpg'
+])
+const currentImageIndex = ref(0)
+
 // Background videos configuration
 const backgroundVideos = ref([
-  { src: '/images/gallery/WhatsApp Vidéo 2025-10-14 à 15.33.51_26420f74.mp4', active: true },
-  { src: '/images/gallery/WhatsApp Vidéo 2025-10-14 à 15.49.39_9ea5c2b3.mp4', active: false },
-  { src: '/images/gallery/WhatsApp Vidéo 2025-10-14 à 15.48.32_d79c1f4e.mp4', active: false },
-  { src: '/images/gallery/WhatsApp Vidéo 2025-10-14 à 15.48.33_f33d3e99.mp4', active: false }
+  { src: '/images/gallery/WhatsApp Vidéo 2025-10-14 à 15.48.32_d79c1f4e.mp4', active: true },
+  { src: '/images/gallery/WhatsApp Vidéo 2025-10-14 à 15.49.29_e7a48784.mp4', active: false },
+  { src: '/images/gallery/WhatsApp Vidéo 2025-10-14 à 15.49.33_f934de68.mp4', active: false }
 ])
 
 let videoTransitionInterval = null
+let carouselInterval = null
 
 const scrollToTop = () => {
   window.scrollTo({
@@ -150,26 +245,35 @@ const startVideoTransitions = () => {
   let currentIndex = 0
   
   videoTransitionInterval = setInterval(() => {
-    // Deactivate current video
-    backgroundVideos.value[currentIndex].active = false
+    // Simple fade transition without restarting videos
+    backgroundVideos.value.forEach((video, index) => {
+      video.active = index === currentIndex
+    })
     
     // Move to next video
     currentIndex = (currentIndex + 1) % backgroundVideos.value.length
-    
-    // Activate next video
-    backgroundVideos.value[currentIndex].active = true
-  }, 8000) // Change video every 8 seconds
+  }, 10000) // Change video every 10 seconds (longer for smoother experience)
+}
+
+const startCarousel = () => {
+  carouselInterval = setInterval(() => {
+    currentImageIndex.value = (currentImageIndex.value + 1) % galleryImages.value.length
+  }, 3000)
 }
 
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
   startVideoTransitions()
+  startCarousel()
 })
 
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
   if (videoTransitionInterval) {
     clearInterval(videoTransitionInterval)
+  }
+  if (carouselInterval) {
+    clearInterval(carouselInterval)
   }
 })
 </script>
