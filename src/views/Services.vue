@@ -3,7 +3,7 @@
     <!-- Page Header -->
     <section class="py-8 sm:py-12 lg:py-16 bg-transparent text-gray-800">
       <div class="container mx-auto px-6 sm:px-8 lg:px-12 text-center">
-        <h1 class="text-5xl sm:text-5xl lg:text-7xl font-windsong mb-6 px-4 sm:px-6 lg:px-8" data-aos="fade-up">Nos Services</h1>
+        <h1 class="text-7xl sm:text-7xl lg:text-10xl font-windsong mb-6 px-4 sm:px-6 lg:px-8" data-aos="fade-up">Nos Services</h1>
         <p class="text-xl lg:text-2xl max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
           Découvrez tous nos services de glaces roulées artisanales pour vos événements
         </p>
@@ -21,7 +21,7 @@
             </div>
             
             <div class="space-y-6 text-gray-700 text-lg order-1 lg:order-2" data-aos="fade-right">
-              <h2 class="text-3xl lg:text-4xl font-windsong text-center text-black">Entreprises</h2>
+              <h2 class="text-4xl lg:text-6xl font-windsong text-center text-black">Entreprises</h2>
               <p>
                 Pour vos <strong>événements d'entreprise</strong>, team building, lancements de produits 
                 ou réceptions corporatives, nos glaces roulées artisanales créent une expérience 
@@ -65,7 +65,7 @@
             </div>
             
             <div class="space-y-6 text-gray-700 text-lg order-1 lg:order-2" data-aos="fade-right">
-              <h2 class="text-3xl lg:text-4xl font-windsong text-center text-black">Mariages</h2>
+              <h2 class="text-4xl lg:text-6xl font-windsong text-center text-black">Mariages</h2>
               <p>
                 Pour votre <strong>grand jour</strong>, offrez à vos invités une expérience gustative 
                 inoubliable avec nos glaces roulées artisanales. Un dessert unique qui s'harmonise 
@@ -105,7 +105,7 @@
         <div id="anniversaires" class="mb-20 scroll-mt-24">
           <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
             <div class="space-y-6 text-gray-700 text-lg" data-aos="fade-right">
-              <h2 class="text-3xl lg:text-4xl font-windsong text-center text-black">Anniversaires</h2>
+              <h2 class="text-4xl lg:text-6xl font-windsong text-center text-black">Anniversaires</h2>
               <p>
                 Pour célébrer un <strong>anniversaire</strong> en beauté, nos glaces roulées artisanales 
                 apportent une touche festive et originale à votre fête. Un dessert spectaculaire qui 
@@ -149,7 +149,7 @@
         <div id="festivals" class="mb-20 scroll-mt-24">
           <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
             <div class="space-y-6 text-gray-700 text-lg" data-aos="fade-right">
-              <h2 class="text-3xl lg:text-4xl font-windsong text-center text-black">Festivals</h2>
+              <h2 class="text-4xl lg:text-6xl font-windsong text-center text-black">Festivals</h2>
               <p>
                 Nos glaces roulées artisanales sont parfaites pour animer vos <strong>festivals</strong> 
                 et événements culturels. Un stand attractif qui attire les festivaliers et leur 
@@ -191,7 +191,7 @@
 
         <!-- CTA Section -->
         <div class="text-center bg-gradient-to-br from-gray-50 to-blue-50 rounded-3xl p-12">
-          <h2 class="text-4xl lg:text-5xl font-windsong mb-6 text-gray-800">Prêt à organiser votre événement ?</h2>
+          <h2 class="text-6xl lg:text-7xl font-windsong mb-6 text-gray-800">Prêt à organiser votre événement ?</h2>
           <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
             Contactez-nous pour discuter de vos besoins et obtenir un devis personnalisé pour votre événement.
           </p>

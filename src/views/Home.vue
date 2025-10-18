@@ -46,7 +46,7 @@
     <section class="py-12 sm:py-16 md:py-20 bg-gray-50">
       <div class="container mx-auto px-3 sm:px-4 lg:px-8">
         <div class="text-center mb-12 sm:mb-16" data-aos="fade-up">
-          <h2 class="text-4xl sm:text-4xl md:text-5xl lg:text-5xl font-windsong mb-4 sm:mb-6 text-gray-800">
+          <h2 class="text-6xl sm:text-6xl md:text-7xl lg:text-7xl font-windsong mb-4 sm:mb-6 text-gray-800">
             Notre Mission
           </h2>
           <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-2">
@@ -214,7 +214,7 @@
       <div class="container mx-auto px-4 lg:px-8">
         <div class="text-center mb-16" data-aos="fade-up">
           <p class="text-accent-indigo font-semibold mb-4">Témoignages</p>
-          <h2 class="text-4xl lg:text-5xl font-windsong mb-6 text-gray-800">
+          <h2 class="text-6xl lg:text-7xl font-windsong mb-6 text-gray-800">
             Ce qu'en disent nos clients
           </h2>
           <p class="text-xl text-gray-600 max-w-3xl mx-auto">

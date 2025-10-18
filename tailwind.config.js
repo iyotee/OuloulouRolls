@@ -17,7 +17,8 @@ export default {
       },
       fontFamily: {
         sans: ["Quicksand", "sans-serif"],
-        heading: ["Bubblegum Sans", "cursive"],
+        heading: ["Hurricane", "cursive"],
+        windsong: ["Hurricane", "cursive"],
       },
       colors: {
         primary: {
