@@ -209,6 +209,68 @@
       </div>
     </section>
 
+    <!-- Partners Banner -->
+    <section class="py-12 bg-transparent overflow-hidden">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12" data-aos="fade-up">
+          <h2 class="text-6xl lg:text-7xl font-windsong mb-4 text-gray-800">
+            Ils Nous Font Confiance
+          </h2>
+        </div>
+        
+        <!-- Scrolling Logos -->
+        <div class="relative overflow-hidden">
+          <div class="flex animate-scroll space-x-12">
+            <!-- First set of logos -->
+            <div 
+              v-for="partner in partnersLogos" 
+              :key="`first-${partner.name}`"
+              class="flex-shrink-0 flex items-center justify-center"
+            >
+              <a 
+                :href="partner.url" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="block hover:scale-105 transition-transform duration-300"
+              >
+                <img 
+                  :src="partner.icon" 
+                  :alt="partner.name"
+                  class="h-16 sm:h-20 lg:h-24 object-contain opacity-100 hover:opacity-70 transition-opacity duration-300"
+                >
+              </a>
+            </div>
+            
+            <!-- Duplicate set for seamless loop -->
+            <div 
+              v-for="partner in partnersLogos" 
+              :key="`second-${partner.name}`"
+              class="flex-shrink-0 flex items-center justify-center"
+            >
+              <a 
+                :href="partner.url" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="block hover:scale-105 transition-transform duration-300"
+              >
+                <img 
+                  :src="partner.icon" 
+                  :alt="partner.name"
+                  class="h-16 sm:h-20 lg:h-24 object-contain opacity-100 hover:opacity-70 transition-opacity duration-300"
+                >
+              </a>
+            </div>
+          </div>
+          
+          <!-- Left fade mask -->
+          <div class="absolute left-0 top-0 bottom-0 w-20 sm:w-24 lg:w-32 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none"></div>
+          
+          <!-- Right fade mask -->
+          <div class="absolute right-0 top-0 bottom-0 w-20 sm:w-24 lg:w-32 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none"></div>
+        </div>
+      </div>
+    </section>
+
     <!-- Google Reviews Section -->
     <section class="py-20 bg-white">
       <div class="container mx-auto px-4 lg:px-8">
@@ -300,6 +362,31 @@ const galleryImages = ref([
   '/images/gallery/WhatsApp Image 2025-10-14 à 15.48.31_81c51376.jpg'
 ])
 const currentImageIndex = ref(0)
+
+// Partners logos for scrolling banner
+const partnersLogos = ref([
+  { name: 'Arcana Festival', icon: '/images/logos/arcana.png', url: 'https://www.arcanafestival.ch' },
+  { name: 'Athletissima', icon: '/images/logos/athletissima.png', url: 'https://athletissima.ch' },
+  { name: 'Braderie Horlofolies', icon: '/images/logos/Horlofolies.png', url: 'https://www.braderie-horlofolies.ch' },
+  { name: 'Dragon Ball Day', icon: '/images/logos/DBD.png', url: 'https://www.dragonballday.ch' },
+  { name: 'Enzo Net', icon: '/images/logos/EnzoNet.png', url: 'https://enzonet.ch' },
+  { name: 'Graine de Foot', icon: '/images/logos/graineFoot.png', url: 'https://www.grainesdefoot.ch' },
+  { name: 'Kiyo Festival', icon: '/images/logos/kiyo.png', url: 'https://kiyofestival.ch' },
+  { name: 'Lake Parade', icon: '/images/logos/lake.png', url: 'https://lakeparade.ch' },
+  { name: 'Lausanne Sport', icon: '/images/logos/ls.png', url: 'https://www.lausanne-sport.ch' },
+  { name: 'Le Châtelard International School', icon: '/images/logos/chatelard-logo.png', url: 'https://ecolechatelard.ch' },
+  { name: 'Migros Vaud', icon: '/images/logos/migros-logo.png', url: 'https://vaud.migros.ch/fr.html' },
+  { name: 'Montreux Jazz Festival', icon: '/images/logos/MontreuxJazzFestival.png', url: 'https://www.montreuxjazzfestival.com/en/' },
+  { name: 'Orllati', icon: '/images/logos/Orllati.png', url: 'https://www.orllati.ch/' },
+  { name: 'Paléo Festival', icon: '/images/logos/paleo.png', url: 'https://yeah.paleo.ch/fr' },
+  { name: 'Polyval', icon: '/images/logos/polyval.png', url: 'https://www.polyval.ch/fr' },
+  { name: 'Rolex', icon: '/images/logos/Rolex.png', url: 'https://www.rolex.com' },
+  { name: 'SCHR', icon: '/images/logos/SCHR.png', url: 'https://schrenens.ch' },
+  { name: 'Shonen Pop', icon: '/images/logos/shonen.png', url: 'https://shonenpop.com/' },
+  { name: 'UBS', icon: '/images/logos/ubs.png', url: 'https://www.ubs.com/ch/en.html' },
+  { name: 'Ville de Renens', icon: '/images/logos/villeDeRenensl.png', url: 'https://www.renens.ch' },
+  { name: 'Zumbucks', icon: '/images/logos/zumbruck.png', url: 'https://zumbucks.com/' }
+])
 
 // Background videos configuration
 const backgroundVideos = ref([
@@ -418,6 +505,25 @@ onUnmounted(() => {
 
 .animate-float {
   animation: float 3s ease-in-out infinite;
+}
+
+/* Scrolling animation for partners banner */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 30s linear infinite;
+  width: calc(200% + 2rem);
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
 }
 
 /* Edge Mobile specific fixes for video background */
