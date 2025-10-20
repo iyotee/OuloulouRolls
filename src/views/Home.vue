@@ -125,7 +125,7 @@
       <div class="container mx-auto px-6">
         <div class="text-center mb-16" data-aos="fade-up">
           <p class="text-accent-indigo font-semibold mb-4">Découvrez</p>
-          <h2 class="text-4xl font-heading font-bold text-gray-800 mb-6">Nos Créations Tendance</h2>
+          <h2 class="text-5xl sm:text-6xl lg:text-7xl font-windsong text-gray-800 mb-6">Nos Créations Tendance</h2>
           <p class="text-xl text-gray-600 max-w-3xl mx-auto">Nous mettons un point d'honneur à vous offrir des parfums qui surprendront vos convives. Laissez-vous emporter par des notes fruitées, salées ou gourmandes.</p>
         </div>
         
