@@ -84,7 +84,7 @@ const partenaires = [
   { name: 'Le Châtelard International School', icon: '/images/logos/chatelard-logo.png', description: 'Événements éducatifs', url: 'https://ecolechatelard.ch' },
   { name: 'Migros Vaud', icon: '/images/logos/migros-logo.png', description: 'Événements corporatifs', url: 'https://vaud.migros.ch/fr.html' },
   { name: 'Montreux Jazz Festival', icon: '/images/logos/MontreuxJazzFestival.png', description: 'Festival de jazz', url: 'https://www.montreuxjazzfestival.com/en/' },
-  { name: 'Orllati', icon: '/images/logos/Orllati.png', description: 'Événements corporatifs', url: 'https://www.orllati.ch/' },
+  { name: 'Orllati', icon: '/images/logos/orllati.png', description: 'Événements corporatifs', url: 'https://www.orllati.ch/' },
   { name: 'Paléo Festival', icon: '/images/logos/paleo.png', description: 'Festival de musique', url: 'https://yeah.paleo.ch/fr' },
   { name: 'Polyval', icon: '/images/logos/polyval.png', description: 'Événements corporatifs', url: 'https://www.polyval.ch/fr' },
   { name: 'Rolex', icon: '/images/logos/Rolex.png', description: 'Événements de luxe', url: 'https://www.rolex.com' },

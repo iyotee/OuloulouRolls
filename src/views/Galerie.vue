@@ -278,6 +278,8 @@ const galleryItems = [
   { id: 17, type: 'image', category: 'Festivals', title: 'Festival de metal', description: 'Musique metal', src: '/images/gallery/WhatsApp Image 2025-10-14 à 15.49.32_6b942f26.jpg' },
   { id: 18, type: 'image', category: 'Festivals', title: 'Festival de punk', description: 'Musique punk', src: '/images/gallery/WhatsApp Image 2025-10-14 à 15.49.32_9827dd62.jpg' },
   { id: 19, type: 'image', category: 'Festivals', title: 'Festival de classical', description: 'Musique classique', src: '/images/gallery/WhatsApp Image 2025-10-14 à 15.49.42_fe3a80f1.jpg' },
+  { id: 20, type: 'image', category: 'Événements', title: 'Événement spécial', description: 'Moment unique', src: '/images/gallery/WhatsApp Image 2025-10-19 à 15.48.18_9f4a7880.jpg' },
+  { id: 21, type: 'image', category: 'Événements', title: 'Création SansMoi', description: 'Création spéciale', src: '/images/gallery/SansMoi.png' },
   
   // Vidéos existantes
   { id: 23, type: 'video', category: 'Privé', title: 'Vidéo anniversaire', description: 'Fête privée', src: '/images/gallery/WhatsApp Vidéo 2025-10-14 à 15.33.49_394f9d6f.mp4' },

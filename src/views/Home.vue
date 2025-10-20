@@ -16,7 +16,6 @@
           playsinline
           webkit-playsinline
           preload="auto"
-          controls="false"
           disablepictureinpicture
           @loadeddata="setVideoSpeed"
           @error="handleVideoError"
@@ -212,7 +211,7 @@
     <!-- Partners Banner -->
     <section class="py-12 bg-transparent overflow-hidden">
       <div class="container mx-auto px-4">
-        <div class="text-center mb-12" data-aos="fade-up">
+        <div class="text-center mb-24" data-aos="fade-up">
           <h2 class="text-6xl lg:text-7xl font-windsong mb-4 text-gray-800">
             Ils Nous Font Confiance
           </h2>
@@ -220,7 +219,18 @@
         
         <!-- Scrolling Logos -->
         <div class="relative overflow-hidden">
-          <div class="flex animate-scroll space-x-12">
+          <div 
+            class="flex animate-scroll space-x-12"
+            ref="logosTrack"
+            :style="{ transform: `translateX(${translateX}px)` }"
+            @mousedown="onDragStart"
+            @mousemove="onDragMove"
+            @mouseup="onDragEnd"
+            @mouseleave="onDragEnd"
+            @touchstart.prevent="onTouchStart"
+            @touchmove.prevent="onTouchMove"
+            @touchend="onDragEnd"
+          >
             <!-- First set of logos -->
             <div 
               v-for="partner in partnersLogos" 
@@ -274,7 +284,7 @@
     <!-- Google Reviews Section -->
     <section class="py-20 bg-white">
       <div class="container mx-auto px-4 lg:px-8">
-        <div class="text-center mb-16" data-aos="fade-up">
+        <div class="text-center mb-10" data-aos="fade-up">
           <p class="text-accent-indigo font-semibold mb-4">Témoignages</p>
           <h2 class="text-6xl lg:text-7xl font-windsong mb-6 text-gray-800">
             Ce qu'en disent nos clients
@@ -313,8 +323,8 @@
         </div>
         
       <!-- Call to Action -->
-      <div class="text-center mt-8" data-aos="fade-up" data-aos-delay="400">
-        <p class="text-lg text-gray-600 mb-4">
+      <div class="text-center mt-2" data-aos="fade-up" data-aos-delay="400">
+        <p class="text-xl text-gray-600 mb-2">
           Vous aussi, partagez votre expérience avec nous !
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -377,7 +387,7 @@ const partnersLogos = ref([
   { name: 'Le Châtelard International School', icon: '/images/logos/chatelard-logo.png', url: 'https://ecolechatelard.ch' },
   { name: 'Migros Vaud', icon: '/images/logos/migros-logo.png', url: 'https://vaud.migros.ch/fr.html' },
   { name: 'Montreux Jazz Festival', icon: '/images/logos/MontreuxJazzFestival.png', url: 'https://www.montreuxjazzfestival.com/en/' },
-  { name: 'Orllati', icon: '/images/logos/Orllati.png', url: 'https://www.orllati.ch/' },
+  { name: 'Orllati', icon: '/images/logos/orllati.png', url: 'https://www.orllati.ch/' },
   { name: 'Paléo Festival', icon: '/images/logos/paleo.png', url: 'https://yeah.paleo.ch/fr' },
   { name: 'Polyval', icon: '/images/logos/polyval.png', url: 'https://www.polyval.ch/fr' },
   { name: 'Rolex', icon: '/images/logos/Rolex.png', url: 'https://www.rolex.com' },
@@ -468,10 +478,91 @@ const startCarousel = () => {
   }, 3000)
 }
 
+// ----- Partners banner drag/auto-scroll -----
+const logosTrack = ref(null)
+const translateX = ref(0)
+let rafId = null
+let lastTime = 0
+const autoScrollSpeedPxPerSec = 60
+let isDragging = false
+let dragStartX = 0
+
+const getHalfTrackWidth = () => {
+  if (!logosTrack.value) return 0
+  return Math.max(1, Math.floor(logosTrack.value.scrollWidth / 2))
+}
+
+const wrapPosition = () => {
+  const half = getHalfTrackWidth()
+  if (!half) return
+  while (translateX.value <= -half) translateX.value += half
+  while (translateX.value > 0) translateX.value -= half
+}
+
+const loopAutoScroll = (timestamp) => {
+  if (!lastTime) lastTime = timestamp
+  const deltaSeconds = (timestamp - lastTime) / 1000
+  lastTime = timestamp
+  translateX.value -= autoScrollSpeedPxPerSec * deltaSeconds
+  wrapPosition()
+  rafId = requestAnimationFrame(loopAutoScroll)
+}
+
+const startAutoScroll = () => {
+  cancelAutoScroll()
+  lastTime = 0
+  rafId = requestAnimationFrame(loopAutoScroll)
+}
+
+const cancelAutoScroll = () => {
+  if (rafId) {
+    cancelAnimationFrame(rafId)
+    rafId = null
+  }
+}
+
+const onDragStart = (e) => {
+  isDragging = true
+  dragStartX = e.clientX
+  cancelAutoScroll()
+}
+
+const onDragMove = (e) => {
+  if (!isDragging) return
+  const currentX = e.clientX
+  const delta = currentX - dragStartX
+  dragStartX = currentX
+  translateX.value += delta
+  wrapPosition()
+}
+
+const onTouchStart = (e) => {
+  if (!e.touches || e.touches.length === 0) return
+  isDragging = true
+  dragStartX = e.touches[0].clientX
+  cancelAutoScroll()
+}
+
+const onTouchMove = (e) => {
+  if (!isDragging || !e.touches || e.touches.length === 0) return
+  const currentX = e.touches[0].clientX
+  const delta = currentX - dragStartX
+  dragStartX = currentX
+  translateX.value += delta
+  wrapPosition()
+}
+
+const onDragEnd = () => {
+  if (!isDragging) return
+  isDragging = false
+  startAutoScroll()
+}
+
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
   startVideoTransitions()
   startCarousel()
+  startAutoScroll()
   
   // Force video play on iOS after component mount
   setTimeout(() => {
@@ -494,6 +585,7 @@ onUnmounted(() => {
   if (carouselInterval) {
     clearInterval(carouselInterval)
   }
+  cancelAutoScroll()
 })
 </script>
 
@@ -507,23 +599,12 @@ onUnmounted(() => {
   animation: float 3s ease-in-out infinite;
 }
 
-/* Scrolling animation for partners banner */
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
 .animate-scroll {
-  animation: scroll 30s linear infinite;
-  width: calc(200% + 2rem);
+  width: max-content;
+  white-space: nowrap;
 }
 
 .animate-scroll:hover {
-  animation-play-state: paused;
 }
 
 /* Edge Mobile specific fixes for video background */
