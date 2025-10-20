@@ -227,8 +227,8 @@
             @mousemove="onDragMove"
             @mouseup="onDragEnd"
             @mouseleave="onDragEnd"
-            @touchstart.prevent="onTouchStart"
-            @touchmove.prevent="onTouchMove"
+            @touchstart="onTouchStart"
+            @touchmove="onTouchMove"
             @touchend="onDragEnd"
           >
             <!-- First set of logos -->
@@ -486,6 +486,8 @@ let lastTime = 0
 const autoScrollSpeedPxPerSec = 60
 let isDragging = false
 let dragStartX = 0
+let dragMoved = false
+const DRAG_THRESHOLD = 5 // px
 
 const getHalfTrackWidth = () => {
   if (!logosTrack.value) return 0
@@ -524,6 +526,7 @@ const cancelAutoScroll = () => {
 const onDragStart = (e) => {
   isDragging = true
   dragStartX = e.clientX
+  dragMoved = false
   cancelAutoScroll()
 }
 
@@ -533,6 +536,7 @@ const onDragMove = (e) => {
   const delta = currentX - dragStartX
   dragStartX = currentX
   translateX.value += delta
+  if (Math.abs(delta) > 0) dragMoved = true
   wrapPosition()
 }
 
@@ -540,6 +544,7 @@ const onTouchStart = (e) => {
   if (!e.touches || e.touches.length === 0) return
   isDragging = true
   dragStartX = e.touches[0].clientX
+  dragMoved = false
   cancelAutoScroll()
 }
 
@@ -549,11 +554,22 @@ const onTouchMove = (e) => {
   const delta = currentX - dragStartX
   dragStartX = currentX
   translateX.value += delta
+  if (Math.abs(delta) > 0) dragMoved = true
   wrapPosition()
 }
 
-const onDragEnd = () => {
+const onDragEnd = (e) => {
   if (!isDragging) return
+  // If it was a tap (no significant movement), let the click pass through
+  if (e && e.type && (e.type.startsWith('touch') || e.type.startsWith('mouse'))) {
+    if (!dragMoved) {
+      // no-op: allow default link behavior
+    } else {
+      // Prevent accidental clicks after a drag
+      if (e.preventDefault) e.preventDefault()
+      if (e.stopPropagation) e.stopPropagation()
+    }
+  }
   isDragging = false
   startAutoScroll()
 }
