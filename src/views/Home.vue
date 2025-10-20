@@ -213,7 +213,7 @@
       <div class="container mx-auto px-4">
         <div class="text-center mb-24" data-aos="fade-up">
           <h2 class="text-6xl lg:text-7xl font-windsong mb-4 text-gray-800">
-            Ils Nous Font Confiance
+            Nous Ont Fait Confiance
           </h2>
         </div>
         
