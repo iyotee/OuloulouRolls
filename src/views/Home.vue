@@ -49,7 +49,7 @@
             Notre Mission
           </h2>
           <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-2">
-            Des Ice Rolls préparés sous vos yeux, un spectacle gourmand qui transforme chaque événement en moment inoubliable.<br>
+            Des Ice Rolls préparés sous vos yeux, un spectacle gourmand qui transforme chaque événement en un moment inoubliable.<br>
             Faites vibrer vos invités — demandez votre devis dès aujourd'hui !
           </p>
           </div>
