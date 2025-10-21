@@ -15,8 +15,11 @@
           loop
           playsinline
           webkit-playsinline
+          x-webkit-airplay="deny"
           preload="auto"
           disablepictureinpicture
+          disableremoteplayback
+          controlslist="nodownload nofullscreen noremoteplayback"
           @loadeddata="setVideoSpeed"
           @error="handleVideoError"
           @loadstart="handleVideoLoad"
@@ -438,6 +441,13 @@ const handleVideoLoad = (event) => {
   const video = event.target
   video.muted = true
   video.playsInline = true
+  // Force remove any controls attributes for iOS
+  video.removeAttribute('controls')
+  video.setAttribute('playsinline', '')
+  video.setAttribute('webkit-playsinline', '')
+  video.setAttribute('x-webkit-airplay', 'deny')
+  // Hide controls via style for extra safety
+  video.style.pointerEvents = 'none'
   // Ensure video plays
   video.play().catch(e => console.warn('Video autoplay failed:', e))
 }
@@ -448,6 +458,10 @@ const forcePlay = (event) => {
   if (video.paused) {
     video.muted = true
     video.playsInline = true
+    video.removeAttribute('controls')
+    video.setAttribute('playsinline', '')
+    video.setAttribute('webkit-playsinline', '')
+    video.style.pointerEvents = 'none'
     video.play().catch(e => {
       console.warn('Force play failed:', e)
       // Try again after a short delay
@@ -580,14 +594,23 @@ onMounted(() => {
   startCarousel()
   startAutoScroll()
   
-  // Force video play on iOS after component mount
+  // Force video play on iOS after component mount with aggressive control hiding
   setTimeout(() => {
     backgroundVideos.value.forEach((video, index) => {
       const videoElement = document.querySelector(`video[src="${video.src}"]`)
-      if (videoElement && videoElement.paused) {
+      if (videoElement) {
         videoElement.muted = true
         videoElement.playsInline = true
-        videoElement.play().catch(e => console.warn('iOS force play failed:', e))
+        videoElement.removeAttribute('controls')
+        videoElement.setAttribute('playsinline', '')
+        videoElement.setAttribute('webkit-playsinline', '')
+        videoElement.setAttribute('x-webkit-airplay', 'deny')
+        videoElement.setAttribute('disablepictureinpicture', '')
+        videoElement.setAttribute('disableremoteplayback', '')
+        videoElement.style.pointerEvents = 'none'
+        if (videoElement.paused) {
+          videoElement.play().catch(e => console.warn('iOS force play failed:', e))
+        }
       }
     })
   }, 500)
@@ -638,30 +661,59 @@ onUnmounted(() => {
   background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
 }
 
-/* iOS specific fixes */
+/* iOS specific fixes - AGGRESSIVE CONTROLS HIDING */
 @supports (-webkit-touch-callout: none) {
   .video-background {
     -webkit-playsinline: true;
-    -webkit-media-controls: none;
-    -webkit-media-controls-overlay-play-button: none;
-    -webkit-media-controls-play-button: none;
-    -webkit-media-controls-start-playback-button: none;
+    -webkit-media-controls: none !important;
+    -webkit-media-controls-overlay-play-button: none !important;
+    -webkit-media-controls-play-button: none !important;
+    -webkit-media-controls-start-playback-button: none !important;
+    pointer-events: none;
   }
   
   .video-background::-webkit-media-controls {
     display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
   }
   
   .video-background::-webkit-media-controls-panel {
     display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
   }
   
   .video-background::-webkit-media-controls-play-button {
     display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
   }
   
   .video-background::-webkit-media-controls-start-playback-button {
     display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+  
+  .video-background::-webkit-media-controls-enclosure {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+  
+  .video-background::-webkit-media-controls-overlay-enclosure {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+  
+  .video-background::-webkit-full-page-media::-webkit-media-controls-panel {
+    display: none !important;
+  }
+  
+  .video-container {
+    pointer-events: none;
   }
 }
 
@@ -692,6 +744,34 @@ onUnmounted(() => {
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   will-change: opacity;
+  /* Hide all controls globally */
+  pointer-events: none;
+}
+
+/* Hide all webkit video controls */
+.video-background::-webkit-media-controls {
+  display: none !important;
+  -webkit-appearance: none !important;
+}
+
+.video-background::-webkit-media-controls-enclosure {
+  display: none !important;
+}
+
+.video-background::-webkit-media-controls-panel {
+  display: none !important;
+}
+
+.video-background::-webkit-media-controls-play-button {
+  display: none !important;
+}
+
+.video-background::-webkit-media-controls-start-playback-button {
+  display: none !important;
+}
+
+.video-background::-webkit-media-controls-overlay-enclosure {
+  display: none !important;
 }
 
 .video-active {
