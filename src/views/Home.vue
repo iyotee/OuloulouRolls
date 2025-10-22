@@ -20,6 +20,7 @@
           disablepictureinpicture
           disableremoteplayback
           controlslist="nodownload nofullscreen noremoteplayback"
+          style="pointer-events: none; -webkit-media-controls: none; -webkit-media-controls-overlay-play-button: none;"
           @loadeddata="setVideoSpeed"
           @error="handleVideoError"
           @loadstart="handleVideoLoad"
@@ -448,6 +449,10 @@ const handleVideoLoad = (event) => {
   video.setAttribute('x-webkit-airplay', 'deny')
   // Hide controls via style for extra safety
   video.style.pointerEvents = 'none'
+  video.style.webkitMediaControls = 'none'
+  video.style.webkitMediaControlsOverlayPlayButton = 'none'
+  video.style.webkitMediaControlsPlayButton = 'none'
+  video.style.webkitMediaControlsStartPlaybackButton = 'none'
   // Ensure video plays
   video.play().catch(e => console.warn('Video autoplay failed:', e))
 }
@@ -462,6 +467,10 @@ const forcePlay = (event) => {
     video.setAttribute('playsinline', '')
     video.setAttribute('webkit-playsinline', '')
     video.style.pointerEvents = 'none'
+    video.style.webkitMediaControls = 'none'
+    video.style.webkitMediaControlsOverlayPlayButton = 'none'
+    video.style.webkitMediaControlsPlayButton = 'none'
+    video.style.webkitMediaControlsStartPlaybackButton = 'none'
     video.play().catch(e => {
       console.warn('Force play failed:', e)
       // Try again after a short delay
@@ -608,6 +617,10 @@ onMounted(() => {
         videoElement.setAttribute('disablepictureinpicture', '')
         videoElement.setAttribute('disableremoteplayback', '')
         videoElement.style.pointerEvents = 'none'
+        videoElement.style.webkitMediaControls = 'none'
+        videoElement.style.webkitMediaControlsOverlayPlayButton = 'none'
+        videoElement.style.webkitMediaControlsPlayButton = 'none'
+        videoElement.style.webkitMediaControlsStartPlaybackButton = 'none'
         if (videoElement.paused) {
           videoElement.play().catch(e => console.warn('iOS force play failed:', e))
         }

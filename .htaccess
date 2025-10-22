@@ -1,6 +1,10 @@
 RewriteEngine On
 
-# Redirect all to https://ouloulouicerolls.ch (no www, force HTTPS)
+# Redirect www.ouloulouicerolls.ch to https://ouloulouicerolls.ch (fix missing "ice")
+RewriteCond %{HTTP_HOST} ^www\.ouloulouicerolls\.ch$ [NC]
+RewriteRule ^(.*)$ https://ouloulouicerolls.ch/$1 [L,R=301]
+
+# Redirect www.ouloulouicerolls.ch to https://ouloulouicerolls.ch (no www, force HTTPS)
 RewriteCond %{HTTP_HOST} ^www\.ouloulouicerolls\.ch$ [NC,OR]
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://ouloulouicerolls.ch/$1 [L,R=301]
