@@ -298,32 +298,9 @@
             </p>
           </div>
           
-        <!-- Trustindex Widget -->
-        <div class="max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-          <div class="relative w-full sm:hidden" style="padding-bottom: 100%; height: 0;">
-            <iframe 
-              src="https://cdn.trustindex.io/amp-widget.html#d1a58ce561b7397aef569e8c75d"
-              sandbox="allow-scripts allow-same-origin"
-              width="100%" 
-              height="100%"
-              frameborder="0"
-              scrolling="no"
-              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; background-color: white;"
-              title="Avis Google Ouloulou Ice Rolls"
-            ></iframe>
-          </div>
-          <div class="relative w-full hidden sm:block" style="padding-bottom: 56.25%; height: 0;">
-            <iframe 
-              src="https://cdn.trustindex.io/amp-widget.html#d1a58ce561b7397aef569e8c75d"
-              sandbox="allow-scripts allow-same-origin"
-              width="100%" 
-              height="100%"
-              frameborder="0"
-              scrolling="no"
-              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; background-color: white;"
-              title="Avis Google Ouloulou Ice Rolls"
-            ></iframe>
-          </div>
+        <!-- Trustmary Widget -->
+        <div class="max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="200" ref="trustmaryContainer">
+          <!-- Trustmary widget will be loaded here -->
         </div>
         
       <!-- Call to Action -->
@@ -501,6 +478,9 @@ const startCarousel = () => {
   }, 3000)
 }
 
+// Trustmary widget container
+const trustmaryContainer = ref(null)
+
 // ----- Partners banner drag/auto-scroll -----
 const logosTrack = ref(null)
 const translateX = ref(0)
@@ -602,6 +582,14 @@ onMounted(() => {
   startVideoTransitions()
   startCarousel()
   startAutoScroll()
+  
+  // Load Trustmary widget script
+  if (trustmaryContainer.value && !document.querySelector('script[src*="trustmary.com"]')) {
+    const script = document.createElement('script')
+    script.src = 'https://widget.trustmary.com/aFs05iL4N'
+    script.async = true
+    trustmaryContainer.value.appendChild(script)
+  }
   
   // Force video play on iOS after component mount with aggressive control hiding
   setTimeout(() => {
